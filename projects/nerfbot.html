@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+
+	
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_white_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+  
+  <body class="bg-fixed bg-no-repeat bg-left bg-cover bg-blend-multiply bg-slate-700" style="background-image: url('/public/images/IMG_1287_ext.jpg')">
+
+    <div id="wrapper">
+
+      <script>
+    // JavaScript to handle scrolling color change
+    window.addEventListener('scroll', function() {
+      var navbar = document.getElementById('navbar');
+      var logo = document.getElementById('logo');
+      var navitems = document.getElementById('navbar-items')
+      var scrolled = window.scrollY > 50;
+
+      // Adjust the background color based on the scroll position
+      if (scrolled) {
+        navbar.classList.add('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.remove('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+      } else {
+        navbar.classList.remove('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.add('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+      }
+    });
+</script>
+
+
+
+<nav id="navbar" class="bg-[#f9f9f9]/[.1] fixed w-full z-20 top-0 start-0 transition ease-in-out duration-200">
+    <div class="max-w-screen-xl flex flex-nowrap items-center justify-between mx-auto p-4 px-10">
+        <a id="logo" href="/" class="flex items-center space-x-3 rtl:space-x-reverse h-8 w-3/12 min-w-32 bg-no-repeat bg-contain bg-center default-logo"></a>
+        <div class="w-full block w-auto justify-end flex" id="navbar-default">
+          <ul id="navbar-items" class="text-white text-xs md:text-sm font-medium subpixel-antialiased flex p-0 mt-0 flex-row space-x-8 rtl:space-x-reverse border-0">
+            <li>
+              <a href="/" class="block bg-blue-700 rounded bg-transparent p-0 dark:hover:text-blue-500">Home</a>
+            </li>
+            <li>
+              <a href="/about/" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/maximiliano-palay/" target="_blank" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+      <main class="project backdrop-filter backdrop-blur-md bg-opacity-80 bg-slate-800 min-h-screen" >
+	<section id="project-content">
+        <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal">
+            
+            <h2 id="project-date" class="text-right text-sm md:text-md font-normal">December, 2023</h2>
+            <h1 class="tracking-tight text-center leading-none relative mb-8 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
+                <span class="relative z-10">Nerfbot</span>
+            </h1>
+            <h1 class="tracking-tight text-center text-sm md:text-lg">
+                <span class="relative z-10">A robot that searches for targets and blasts them down!</span>
+            </h1>
+            <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ros2</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">python</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">arduino</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">franka</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">yolo</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">realsense</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">computer vision</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">git</div>
+  
+</div>
+
+<h2 id="overview">Overview</h2>
+
+<p>This system is capable of detecting colored bowling pins (targets) through an object detection algorithm, locating them in the world using information provided by the robot-mounted depth camera, and blasting them down using nerf guns upon command. Integration of subsystems was performed using ROS2.</p>
+
+<iframe src="https://www.youtube-nocookie.com/embed/yPsPDbc-QkM?si=8klmPCPZ_uSS0w4e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<h3 id="subsystems">Subsystems</h3>
+
+<div class="w-11/12 mx-auto">
+<li><span class="font-semibold">Franka</span>: the robot arm is controlled using the Moveit2 ROS API.</li>
+<br />
+<li><span class="font-semibold">Computer vision</span>: images provided by an Intel Realsense D435i camera are used to detect pins and locate them in the world using depth information and robot position. The images are also used for april tag detection, which indicates the position of the Nerf blasters.</li>
+<br />
+<li><span class="font-semibold">Voice input</span>: python speech recognition libraries are used with an external microphone to tell the system which pin color to blast.</li>
+<br />
+<li><span class="font-semibold">Nerf guns interfacing</span>: the nerf gun triggers were hacked to be operated using an arduino and integrated to ROS2.</li>
+</div>
+
+<h3 id="typical-flow">Typical flow</h3>
+
+<div class="w-11/12 mx-auto">
+<li><span class="font-semibold">System initialization</span>: all nodes spinned up, blasters loaded with 6 rounds each. The system assumes that is the starting number of rounds on each blaster.</li>
+<br />
+<li><span class="font-semibold">User input</span>: the user tells the system through the microphone which pin color to shoot next.</li>
+<br />
+<li><span class="font-semibold">Pin scanning</span>: the robot points the camera to two predefined "scan positions", and on each one of them the system processes the images to detect and localize the pins.</li>
+<br />
+<li><span class="font-semibold">Gun scanning</span>: the system goes to "gun scan position", where it locates both blasters through their top-mounted april tags. After detecting both blasters, the system heuristically picks the left blaster (blaster #1) and blasts until there are no more pins of the commanded color, or the ammo is out.</li>
+<br />
+<li><span class="font-semibold">Gun picking</span>: the robot picks up the Nerf blaster using cartesian paths and blasts the commanded-color pins from right-to-left.</li>
+<br />
+<li><span class="font-semibold">Blasting</span>: when the robot is at each aim position, an arduino operates relays that make the corresponding gun blast.</li>
+<br />
+<li><span class="font-semibold">Placing</span>: after blasting, the robot places the gun at the pick position (with minor offsets) and wait for command. If there are pins missing and the blaster is out of rounds, the system switches blasters automatically.</li>
+<br />
+<li><span class="font-semibold">Repeat</span>: while there is ammo available, the user can keep indicating which colored pins to blast. The system only scans the pins once (upon the first command), so subsequent commands will just trigger the picking-aiming-firing-placing sequence.</li>
+</div>
+
+<h3 id="personal-work">Personal work</h3>
+
+<div class="w-11/12 mx-auto">
+This project was developed in a group as the final project for ME495: Embedded Systems in Robotics.
+
+<br />
+Personal work includes:
+<div class="w-11/12 mx-auto">
+<br />
+<li>Hacking of Nerf gun electronics to trigger them using Arduino</li>
+<br />
+<li>Development of ROS2 interface for Nerf gun blasting</li>
+<br />
+<li>Collaboration in the development of Moveit2 API wrapper to interface with the Franka arm.</li>
+<br />
+<li>Collaboration in the development of pin-locating code and Realsense interfacing.</li>
+<br />
+<li>Collaboration in integration of subsystems/components.</li>
+</div>
+</div>
+
+        </div>
+		
+
+	</section>
+
+</main>
+
+
+      
+
+<footer class="rounded-lg shadow bg-[#f9f9f9]/[1.0]">
+    <div class="w-full max-w-screen-xl mx-auto p-4">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="/public/images/logo_acronym_small_black.png" class="h-6" alt="Logo" />
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="/about/" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/maximiliano-palay/" target="_blank" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">(c) 2024 - Maximiliano Palay</span>
+    </div>
+</footer>
+
+
+
+
+    </div>
+
+  </body>
+  
+  </html>

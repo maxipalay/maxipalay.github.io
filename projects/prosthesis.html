@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+
+	
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_white_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+  
+  <body class="bg-fixed bg-no-repeat bg-left bg-cover bg-blend-multiply bg-slate-700" style="background-image: url('/public/images/IMG_1287_ext.jpg')">
+
+    <div id="wrapper">
+
+      <script>
+    // JavaScript to handle scrolling color change
+    window.addEventListener('scroll', function() {
+      var navbar = document.getElementById('navbar');
+      var logo = document.getElementById('logo');
+      var navitems = document.getElementById('navbar-items')
+      var scrolled = window.scrollY > 50;
+
+      // Adjust the background color based on the scroll position
+      if (scrolled) {
+        navbar.classList.add('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.remove('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+      } else {
+        navbar.classList.remove('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.add('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+      }
+    });
+</script>
+
+
+
+<nav id="navbar" class="bg-[#f9f9f9]/[.1] fixed w-full z-20 top-0 start-0 transition ease-in-out duration-200">
+    <div class="max-w-screen-xl flex flex-nowrap items-center justify-between mx-auto p-4 px-10">
+        <a id="logo" href="/" class="flex items-center space-x-3 rtl:space-x-reverse h-8 w-3/12 min-w-32 bg-no-repeat bg-contain bg-center default-logo"></a>
+        <div class="w-full block w-auto justify-end flex" id="navbar-default">
+          <ul id="navbar-items" class="text-white text-xs md:text-sm font-medium subpixel-antialiased flex p-0 mt-0 flex-row space-x-8 rtl:space-x-reverse border-0">
+            <li>
+              <a href="/" class="block bg-blue-700 rounded bg-transparent p-0 dark:hover:text-blue-500">Home</a>
+            </li>
+            <li>
+              <a href="/about/" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/maximiliano-palay/" target="_blank" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+      <main class="project backdrop-filter backdrop-blur-md bg-opacity-80 bg-slate-800 min-h-screen" >
+	<section id="project-content">
+        <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal">
+            
+            <h2 id="project-date" class="text-right text-sm md:text-md font-normal">July, 2022</h2>
+            <h1 class="tracking-tight text-center leading-none relative mb-8 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
+                <span class="relative z-10">Bionic prosthesis prototype</span>
+            </h1>
+            <h1 class="tracking-tight text-center text-sm md:text-lg">
+                <span class="relative z-10">Affordable knee and ankle prosthesis prototype.</span>
+            </h1>
+            <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">mechatronics</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">machine learning</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">tensorflow micro</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">arduino</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">teensy</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">imu</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">servo</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">encoder</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">3d printing</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">machining</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">CAD</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">capstone</div>
+  
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">brushless</div>
+  
+</div>
+
+<h3 id="overview">Overview</h3>
+
+<p>This project presents the design and fabrication of a prototype of bionic prosthesis for transfemoral amputees. It consists of two joints, knee and ankle, powered by brushless motors. The device interfaces with standard sockets through a pyramid adapter. The main structure is 3d printed in PLA+ and precision parts were machined in aluminum. The control strategy is based on machine learning algorithms implemented on an ARM cortex-M7 microcontroller. The total hardware cost is under one thousand US dollars. The components used are hobby-grade.
+<br />
+<br />
+The global objective is to create a prototype that serves as ground and inspiration for the development of more accessible assistive devices.
+<br />
+<br />
+This was the capstone project for my undergraduate degree.</p>
+
+<iframe src="https://www.youtube-nocookie.com/embed/O3jBFINMhpw?si=r_ZzpCdn8wmJYxx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<div class="text-center">
+For more information and multimedia check this project's post at <a class="text-blue-200 underline" href="https://hackaday.io/project/184945-affordable-bionic-prosthesis" target="_blank">Hackaday.io</a>.
+</div>
+
+<h3 id="attribution">Attribution</h3>
+
+<div>
+Main design inspiration comes from Matt Carney, PhD's work at the Biomechatronics MIT lab. His thesis, called "Design and Evaluation of a Reaction-Force Series Elastic Actuator Configurable as Biomimetic Powered Ankle and Knee Prostheses" was a key resource for this work. Although this is a much simpler and less spec'd version, I intended to give it a try with a restricted budget and with purely hobby components.
+</div>
+
+        </div>
+		
+
+	</section>
+
+</main>
+
+
+      
+
+<footer class="rounded-lg shadow bg-[#f9f9f9]/[1.0]">
+    <div class="w-full max-w-screen-xl mx-auto p-4">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="/public/images/logo_acronym_small_black.png" class="h-6" alt="Logo" />
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="/about/" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/maximiliano-palay/" target="_blank" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">(c) 2024 - Maximiliano Palay</span>
+    </div>
+</footer>
+
+
+
+
+    </div>
+
+  </body>
+  
+  </html>
