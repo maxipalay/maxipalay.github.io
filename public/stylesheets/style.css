@@ -959,6 +959,26 @@ video {
   background-color: transparent;
 }
 
+.bg-\[center_1_rem\] {
+  background-color: center 1 rem;
+}
+
+.bg-\[left_1_rem\] {
+  background-color: left 1 rem;
+}
+
+.bg-\[left_2_rem\] {
+  background-color: left 2 rem;
+}
+
+.bg-\[left-12rem\] {
+  background-color: left-12rem;
+}
+
+.bg-\[left--12rem\] {
+  background-color: left--12rem;
+}
+
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
@@ -1014,6 +1034,30 @@ video {
 
 .bg-left {
   background-position: left;
+}
+
+.bg-\[left_1rem\] {
+  background-position: left 1rem;
+}
+
+.bg-\[left_2rem\] {
+  background-position: left 2rem;
+}
+
+.bg-\[left_-12rem\] {
+  background-position: left -12rem;
+}
+
+.bg-\[12rem\] {
+  background-position: 12rem;
+}
+
+.bg-\[-12rem\] {
+  background-position: -12rem;
+}
+
+.bg-\[-16rem\] {
+  background-position: -16rem;
 }
 
 .bg-no-repeat {
@@ -1554,6 +1598,10 @@ h3 {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:bg-left {
+    background-position: left;
   }
 
   .md\:text-3xl {
