@@ -969,6 +969,22 @@ video {
   background-color: transparent;
 }
 
+.bg-\[left_1_rem\] {
+  background-color: left 1 rem;
+}
+
+.bg-\[left_2_rem\] {
+  background-color: left 2 rem;
+}
+
+.bg-\[left_200_px\] {
+  background-color: left 200 px;
+}
+
+.bg-\[left__top_200px\] {
+  background-color: left  top 200px;
+}
+
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
@@ -1024,6 +1040,38 @@ video {
 
 .bg-left {
   background-position: left;
+}
+
+.bg-\[left_top_200px\] {
+  background-position: left top 200px;
+}
+
+.bg-\[left_200px\] {
+  background-position: left 200px;
+}
+
+.bg-\[left_200px_top\] {
+  background-position: left 200px top;
+}
+
+.bg-\[left_-200px_top\] {
+  background-position: left -200px top;
+}
+
+.bg-\[left_-300px_top\] {
+  background-position: left -300px top;
+}
+
+.bg-\[left_-250px_top\] {
+  background-position: left -250px top;
+}
+
+.bg-\[left_-225px_top\] {
+  background-position: left -225px top;
+}
+
+.bg-\[left_-180px_top\] {
+  background-position: left -180px top;
 }
 
 .bg-no-repeat {
@@ -1538,6 +1586,10 @@ h3 {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:bg-left {
+    background-position: left;
   }
 
   .md\:text-3xl {
