@@ -86,12 +86,12 @@
 	<section id="project-content">
         <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal">
             
-            <h2 id="project-date" class="text-right text-sm md:text-md font-normal">March, 2021</h2>
+            <h2 id="project-date" class="text-right text-sm md:text-md font-normal">February, 2024</h2>
             <h1 class="tracking-tight text-center leading-none relative mb-8 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
-                <span class="relative z-10">Tracked robotic platform</span>
+                <span class="relative z-10">Extended Kalman Filter SLAM (in progress)</span>
             </h1>
             <h1 class="tracking-tight text-center text-sm md:text-lg">
-                <span class="relative z-10">DIY tracked mobile base.</span>
+                <span class="relative z-10">Implementation of kinematics, odometry, simulation and EKF for SLAM from scratch.</span>
             </h1>
             <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
@@ -99,52 +99,46 @@
             
             <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">prototyping</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">slam</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">brushless</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ros2</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">odrive</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">c++</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">servos</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">rviz2</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">wireless</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">turtlebot</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">3d printing</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">lidar</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">CAD</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">extended kalman filter</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">mechatronics</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">probability</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ROS</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">git</div>
   
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">arduino</div>
-  
-  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">electronics</div>
+  <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">simulation</div>
   
 </div>
 
-<h3 id="overview">Overview</h3>
-
-<p>This project’s objective is to create a tracked robot for ROS development, that looks less like a science project and more like an actual product. These kind of platforms are increasingly used for surveillance, search and rescue, tasks involving mapping, and a plethora of other scenarios. The top cover doubles as a payload bay, and can be modified to allow for many payload configurations.
+<h2 id="overview">Overview</h2>
+<div class="w-11/12 mx-auto">
+Implementation of an Extended Kalman Filter for Simultaneous Localization and Mapping in ROS2 and C++ from scratch. 
+<br />
+<iframe src="https://www.youtube-nocookie.com/embed/vc0cHPwj2pw?si=TI10ZDo4-zkX81_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+<br />
+This video shows the implementation in simulation. The visualization shows 3 robots, a blue turtlebot which represents the location based purely on odometry, a red one which is the ground truth in the implemented simulation, and the green one which is the estimation based on the EKF. The path corresponding to each robot is also shown.
+<br />
+Landmarks are represented by cylinders. Red landmarks are simulation ground truth, yellow landmarks are simulated robot measurements (with added noise), and green landmarks are part of the EKF estimation. The red walls delimit the simulation arena, and the simulated laserscans are shown in red too.
 <br />
 <br />
-Commercially available robotics products are extremely expensive for hobby-level tinkering. On the other hand, most DIY platforms lack on finish and payload versatility. I intend to show that something clean can be made with not too many tools. Let’s blur the line between hobby development and commercial platforms!
-<br />
-<br />
-This project makes use of one of my previous projects for control, the <a class="text-blue-200 underline" href="/projects/ground-station">Ground Control Station</a>.
-<br />
-<br />
-Unlike most of the hobby DIY projects, I’d like this to be a ready to go platform, just flip a switch and use it.</p>
-
-<iframe src="https://www.youtube-nocookie.com/embed/Y4VBscJynfI?si=r6JzZzVYrHN_3_-D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
-
-<p>The platform is featured in the <a class="text-blue-200 underline" href="https://youtu.be/LFOkPUE-_iU?si=DgQYgVnPWF13fz2V" target="_blank">Ground Control Station Hackaday Prize Promo video</a>.
-<br />
-<br /></p>
-
-<div class="text-center">
-For more details check this project out on <a class="text-blue-200 underline" href="https://hackaday.io/project/181500-autonomous-tracked-robotic-platform-ugv" target="_blank">Hackaday.io</a>.
 </div>
+
+<div class="text-center font-medium">This project will be available soon on <a href="https://github.com/maxipalay/" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
+
+<p><br />
+<br />
+Stay tuned for updates!</p>
 
         </div>
 		
