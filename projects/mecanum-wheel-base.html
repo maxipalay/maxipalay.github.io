@@ -126,17 +126,57 @@
 This ongoing project is about building a mecanum wheel base end-to-end. Mechanical design, electronics sourcing, fabrication and software to make everything work. This driving mechanism provides a robot with holonomic drive, i.e. it can move in any direction on the plane.
 <br />
 <br />
-The system was designed for ease of manufacturability. Chassis is comprised of widely available 2020 aluminum extrusion profiles. Custom parts are mostly machined out of sheet metal. Wheels are powered by BLDC motors in a direct drive configuration.
-<br />
-<br />
-This video shows the build progress so far. Will update with more footage. Machining was excluded from the video.
+The video shows the build progress so far. Will update with more footage. Machining was excluded from the video.
 <br />
 <iframe src="https://www.youtube-nocookie.com/embed/oV_v6JY8yzM?si=L2RrMLD51yuXvuj-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
 </div>
+<p><br />
+The system was designed for ease of manufacturability. Chassis is comprised of widely available 2020 aluminum extrusion profiles. Custom parts are mostly machined out of sheet metal. Wheels are powered by BLDC motors in a direct drive configuration.
+<br />
+<br /></p>
+<div class="text-center font-medium">This project's source code and documentation is available on <a href="https://github.com/maxipalay/minimec-ros2" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
 
+<p><br /></p>
 <div class="w-11/12 text-center mx-auto">
 Stay tuned for further updates!
 </div>
+
+<p><br /></p>
+
+<p>An overall layout of the content that will be in this post follows. This will be updated shortly.</p>
+
+<h2 id="software">Software</h2>
+
+<p>ROS2 + C++.</p>
+
+<h3 id="architecture">Architecture</h3>
+
+<p>ROS2 Packages, their organization, diagram, nodes.</p>
+
+<h3 id="kinematics">Kinematics</h3>
+
+<p>Mecanum wheel base kinematics.</p>
+
+<h3 id="path-generation">Path generation</h3>
+
+<p>Generating paths with fixed heading. Different modes: spline from via points, circle POI. Orientation modes.</p>
+
+<h3 id="control">Control</h3>
+
+<p><img src="../public/images/projects/mecanum-base/trajectory_tracking.jpg" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 1: Visualization of robot tracking reference trajectory. Reference trajectory shown in green, odometry estimate shown as red arrows.</div>
+<p><br />
+<br /></p>
+
+<p>Feedforward + P control based on odometry feedback.</p>
+
+<h2 id="mechanical-design--build">Mechanical design &amp; build</h2>
+
+<p>CAD, machining &amp; building. CAD renders, animation, build timelapse.</p>
+
+<h2 id="electronics">Electronics</h2>
+
+<p>Components used, communication protocols, interfaces, diagrams.</p>
 
         </div>
 		
