@@ -136,31 +136,48 @@
 <p><br /></p>
 <div class="text-center font-medium">This project's source code and documentation is available on <a href="https://github.com/maxipalay/minimec-ros2" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
 
-<h2 id="overview">Overview</h2>
+<h1 id="overview">Overview</h1>
 
-<p>This project is about creating a mecanum wheel mobile base end-to-end. Mechanical design, electronics sourcing, fabrication and software that compose a robot. The driving mechanism provides a robot with holonomic drive: it can move in any direction on the plane.
+<p>This project is about creating a mecanum wheel mobile base end-to-end in only 10 weeks of part-time work. Mechanical design, electronics sourcing, fabrication and software that compose a robot. The driving mechanism provides a robot with holonomic drive: it can move in any direction on the plane.
 <br />
 <br />
 Controls were implemented using ROS2 and C++. It has two control modes: teleoperation and trajectory tracking. For the trajectory tracking, the ROS2 architecture offers services that generate paths. Spline paths with fixed orientation, spline paths with point of interest (robot faces a point at all times), and circular paths with point of interest. More functionality can be incrementally added.
 <br />
 <br />
-The system was designed for ease of manufacturability due to the short timeframe to complete the project, only 10 weeks of part-time work. Chassis is comprised of widely available 2020 aluminum extrusion profiles. Custom parts are mostly machined out of sheet metal. Wheels are powered by BLDC motors in a direct drive configuration using Odrive robotics hardware.</p>
+The system was designed for ease of manufacturability due to the short timeframe to complete the project. Chassis is comprised of widely available 2020 aluminum extrusion profiles. Custom parts are mostly machined out of sheet metal. Wheels are powered by BLDC motors in a direct drive configuration using Odrive robotics hardware.
+<br />
+<br />
+This post outlines several aspects of the project:
+<br /></p>
+<div class="w-11/12 mx-auto">
+<li>ROS Architecture</li>
 
-<h2 id="ros-architecture">ROS Architecture</h2>
+<li>Path generation</li>
 
-<p>The software running on this robot is based on ROS2 Iron, C++ and Python. All nodes except for the LEDs control node were implemented in C++. Image X depicts an overview of the ROS nodes that compose the system. The software was designed considering hardware abstraction, so anyone could potentially swap the <code class="language-plaintext highlighter-rouge">minimec_driver</code> and <code class="language-plaintext highlighter-rouge">odrive_can</code> nodes with others that interface with their own hardware and everything should work. The driver node exposes information provided by the odrive in a more standardized ROS2 format following conventions (joint states, cmd_vel, etc).
+<li>Control</li>
+
+<li>Mechanical design &amp; build</li>
+
+<li>Electronics</li>
+
+<li>Future Work</li>
+</div>
+
+<h1 id="ros-architecture">ROS Architecture</h1>
+
+<p>The software running on this robot is based on ROS2 Iron, C++ and Python. All nodes except for the LEDs control node were implemented in C++. Image 1 depicts an overview of the ROS nodes that compose the system. The software was designed considering hardware abstraction, so anyone could potentially swap the <code class="language-plaintext highlighter-rouge">minimec_driver</code> and <code class="language-plaintext highlighter-rouge">odrive_can</code> nodes with others that interface with their own hardware and everything should work. The driver node exposes information provided by the odrive in a more standardized ROS2 format following conventions (joint states, cmd_vel, etc).
 <br />
 <br />
 <img src="../public/images/projects/mecanum-base/ros_architecture.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs w-5/6 mx-auto center">Image X: High level ROS2 architecture. Boxes represent nodes, arrows represent information exchange. This diagram is not exhaustive.</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 1: High level ROS2 architecture. Boxes represent nodes, arrows represent information exchange. This diagram is not exhaustive.</div>
 <p><br />
 <br />
 In teleoperation mode, the nodes <code class="language-plaintext highlighter-rouge">path_generator</code> and <code class="language-plaintext highlighter-rouge">trajectory_tracking</code> are not necessary, and the input velocity commands are provided by the user. In this case, the odometry feedback is not used, except for visualization purposes.</p>
 
-<h2 id="path-generation">Path generation</h2>
+<h1 id="path-generation">Path generation</h1>
 
 <p><img src="../public/images/projects/mecanum-base/planned_paths.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs w-5/6 mx-auto center">Image X: Generated paths: spline with fixed orientation, spline facing a point, circular path (left to right). Control points marked in red, heading point marked in blue.</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 2: Generated paths: spline with fixed orientation, spline facing a point, circular path (left to right). Control points marked in red, heading point marked in blue.</div>
 <p><br />
 <br />
 A ROS2 node offers services that generate different plans/trajectories. The three available modes are: 
@@ -175,33 +192,33 @@ A ROS2 node offers services that generate different plans/trajectories. The thre
 </div>
 <p><br />
 <br />
-The circular path generation was implemented from scratch, and required basic geometry calculations. The splines are generated using the <a href="https://github.com/msteinbeck/tinyspline">TinySpline library</a>. Basically, the user provides a set of control points, and a spline that fits those is generated. Then, the algorithm runs through the spline (at a user set precision), and generates a path only taking the (x,y) position from the spline. The orientation is independently added.</p>
+The circular path generation was implemented from scratch, and required basic geometry calculations. The splines are generated using the <a href="https://github.com/msteinbeck/tinyspline">TinySpline library</a>. Basically, the user provides a set of control points, and a spline that fits those is generated. Then, the algorithm runs through the spline (at a user set precision), and generates a path only taking the <code class="language-plaintext highlighter-rouge">(x,y)</code> position from the spline. The orientation is independently added.</p>
 
-<h2 id="control">Control</h2>
+<h1 id="control">Control</h1>
 
 <p>The control system commands wheel speeds to track desired trajectories. The motor drivers are configured to receive speed commands and provide position feedback form their encoders to the implemented odometry.
 <br />
 <br />
 <img src="../public/images/projects/mecanum-base/control.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs w-5/6 mx-auto center">Image X: Schematic of the control algorithm.</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 3: Schematic of the control algorithm.</div>
 <p><br />
 <br />
-The used algorithm is a feedforward + PI controller. Using the reference trajectory, a feedforward body twist is calculated. The error between the current expected configuration and the odometry feedback is used for the PI control. A representation of the control system is shown in Image X.
+The used algorithm is a feedforward + PI controller. Using the reference trajectory, a feedforward body twist is calculated. The error between the current expected configuration and the odometry feedback is used for the PI control. A representation of the control system is shown in Image 3.
 <br />
 <br />
 <img src="../public/images/projects/mecanum-base/trajectory_tracking.jpg" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs w-5/6 mx-auto center">Image X: Visualization of robot tracking reference trajectory. Reference trajectory shown in green, odometry estimate shown as red arrows.</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 4: Visualization of robot tracking reference trajectory. Reference trajectory shown in green, odometry estimate shown as red arrows.</div>
 <p><br />
 <br />
-A visualization of the robot tracking the reference trajectory is show in Image X. Note this visualization is not a simulation, but a real time feedback of the robot’s estimation from its odometry, overlayed with the reference trajectory.</p>
+A visualization of the robot tracking the reference trajectory is show in Image 4. Note this visualization is not a simulation, but a real time feedback of the robot’s estimation from its odometry, overlayed with the reference trajectory.</p>
 
-<h2 id="mechanical-design--build">Mechanical design &amp; build</h2>
+<h1 id="mechanical-design--build">Mechanical design &amp; build</h1>
 
 <p><img src="../public/images/projects/mecanum-base/render.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs w-5/6 mx-auto center">Image X: Render of the mechanical design.</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 5: Render of the mechanical design.</div>
 <p><br />
 <br />
-The system was designed for fast fabrication and assembly. The actuators are a custom design with an attempt at making them modular. Few components had to be machined in house. A render of the final design is shown on Image X.
+The system was designed for fast fabrication and assembly. The actuators are a custom design with an attempt at making them modular. Few components had to be machined in house. A render of the final design is shown on Image 5.
 <br />
 <br />
 Something that makes this design special is the direct drive mechanism, no reduction in between the motors and wheels. This is not usual in mecanum wheel vehicles, as they usually operate with different types of reductions (belt drives, chain &amp; sprocket, planetary gearboxes). Advantages of a direct drive mechanism include reduced noise, efficiency, simple design and backdrivability (especially important for collaborative robotics). Also, the backdrivability could allow for current regeneration when braking, although this is not implemented at the moment.
@@ -212,7 +229,7 @@ A timelapse of the assembly follows. The total assembly time is estimated to be 
 <br /></p>
 <iframe src="https://www.youtube-nocookie.com/embed/oV_v6JY8yzM?si=L2RrMLD51yuXvuj-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
 
-<h2 id="electronics">Electronics</h2>
+<h1 id="electronics">Electronics</h1>
 
 <p>The onboard computer is a Raspberry Pi 4. It communicates with the Odrive S1 motor controllers through a USB-CAN adapter. The outrunner brushless motors and encoders were purchased from Odrive. The system uses a circuit breaker as a main switch. A Kar-Tech wireless E-Stop operates a relay that cuts power to the motors (but not to the Raspberry Pi). The used battery provides 22.2V nominal voltage. An isolated step-down is used to power the Raspberry Pi.</p>
 
@@ -220,7 +237,7 @@ A timelapse of the assembly follows. The total assembly time is estimated to be 
 
 <p>A strip of 142 neopixel LEDs is mounted under the bottom panel of the robot. This was a final addition to the project, as it is more aesthetic than functional. Nonetheless, the leds are driven by a ROS2 node and they provide visual feedback of robot movement. While the robot is stationary, a chase of rainbow colors runs through the LEDs. When the robot has linear velocity, the leds light up on the direction of the velocity. When there is only angular velocity, the leds perform a chase in the direction of rotation. These features can be seen in the main video.</p>
 
-<h2 id="future-work">Future work</h2>
+<h1 id="future-work">Future work</h1>
 
 <p>While this project’s result is a fully operational robot, there is still a lot to do. The small timeframe to work on the project meant taking shortcuts and simplifications for the sake of time. A non-exhaustive list of features to be added/reviewed follows:</p>
 <div class="w-11/12 mx-auto">
@@ -234,9 +251,11 @@ A timelapse of the assembly follows. The total assembly time is estimated to be 
 <li>Localization: having the robot localize itself on the environment can help better track trajectories. This is especially important because the mecanum wheel base is very sensitive to uneven ground, which can constantly cause slipping.</li>
 <br />
 <li>Brakes: backdrivability is great. It can improve the safety and collaborative aspect of the minimec. Nonetheless, when the E-STOP is activated, the inertia keeps the robot going. Having power-off brakes would make this safer.</li>
+<br />
+<li>Decouple ROS nodes from trajectory tracking code.</li>
 </div>
 
-<h2 id="attribution">Attribution</h2>
+<h1 id="attribution">Attribution</h1>
 
 <p>This project makes use of the <a href="https://github.com/msteinbeck/tinyspline">TinySpline</a> library for generating the spline from reference points.
 <br />
