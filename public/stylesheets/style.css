@@ -750,6 +750,14 @@ video {
   height: 100vh;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
 .min-h-\[512px\] {
   min-height: 512px;
 }
@@ -832,6 +840,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-screen-2xl {
+  max-width: 1536px;
 }
 
 @keyframes fadein {
@@ -1131,6 +1143,21 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pb-16 {
@@ -1558,6 +1585,16 @@ h3 {
 
   .md\:bg-left {
     background-position: left;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .md\:pl-12 {

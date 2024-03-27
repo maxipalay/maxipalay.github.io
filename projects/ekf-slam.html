@@ -84,11 +84,11 @@
 
     <main class="project backdrop-filter backdrop-blur-md bg-opacity-80 bg-slate-800 min-h-screen" >
 	<section id="project-content">
-        <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal">
+        <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal max-w-screen-xl">
             
             <h2 id="project-date" class="text-right text-sm md:text-md font-normal my-4">February, 2024</h2>
             <h1 class="tracking-tight text-center leading-none relative mb-6 mt-0 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
-                <span class="relative z-10">Extended Kalman Filter SLAM (in progress)</span>
+                <span class="relative z-10">Extended Kalman Filter SLAM</span>
             </h1>
             <h1 class="tracking-tight text-center text-sm md:text-lg">
                 <span class="relative z-10">Implementation of kinematics, odometry, simulation and EKF for SLAM from scratch.</span>
@@ -123,22 +123,89 @@
 
 <h2 id="overview">Overview</h2>
 <div class="w-11/12 mx-auto">
-Implementation of an Extended Kalman Filter for Simultaneous Localization and Mapping in ROS2 and C++ from scratch. 
+Implementation of an Extended Kalman Filter for Simultaneous Localization and Mapping in ROS2 and C++ from scratch. This project was carried out in the span of 10 weeks.
+
 <br />
-<iframe src="https://www.youtube-nocookie.com/embed/vc0cHPwj2pw?si=TI10ZDo4-zkX81_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/ja8nJHA0zF8?si=_LcwnB2mptbbfi2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
 <br />
-This video shows the implementation in simulation. The visualization shows 3 robots, a blue turtlebot which represents the location based purely on odometry, a red one which is the ground truth in the implemented simulation, and the green one which is the estimation based on the EKF. The path corresponding to each robot is also shown.
-<br />
-Landmarks are represented by cylinders. Red landmarks are simulation ground truth, yellow landmarks are simulated robot measurements (with added noise), and green landmarks are part of the EKF estimation. The red walls delimit the simulation arena, and the simulated laserscans are shown in red too.
+This video shows the implementation working in real life. The visualization shows 2 robots, a blue turtlebot which represents the odometry estimation and the green one which is the estimation based on the EKF. The path corresponding to each robot is also shown. Landmarks are represented by cylinders. The green landmarks are part of the EKF estimation. These are extracted from the LiDAR scans, which are shown in red. There's some latency due to data transmission over a wireless network.
 <br />
 <br />
 </div>
 
-<div class="text-center font-medium">This project will be available soon on <a href="https://github.com/maxipalay/" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
+<div class="text-center font-medium">This project's source code is available on <a href="https://github.com/maxipalay/ekf-slam" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
 
 <p><br />
+<br /></p>
+
+<h1 id="kinematics--control">Kinematics &amp; Control</h1>
+
+<p>A C++ library was implemented with helper functions for planar body motion, including transforms and geometric operations. A <code class="language-plaintext highlighter-rouge">DiffDrive</code> class implements the forward kinematics and odometry for a differential drive robot.</p>
+
+<h1 id="the-extended-kalman-filter">The Extended Kalman Filter</h1>
+
+<p>The Extended Kalman Filter allows us to get an estimation of the environment (robot + landmarks locations). Our system is nonlinear, so by using the EKF we linearize the state transition model and propagate uncertainty using the linearization as well.
 <br />
-Stay tuned for updates!</p>
+<br />
+Briefly, the steps are:</p>
+<div class="w-11/12 mx-auto">
+<li>Update the estimate using the motion model</li>
+<li>Propagate the uncertainty using linearized state transition model</li>
+<li>Perform an update to our estimate by using measurements. This is where the LiDAR sensor and landmark detection are used. Using each measurement, we refine the state.</li>
+</div>
+
+<h1 id="landmark-detection">Landmark detection</h1>
+
+<p><img src="../public/images/projects/ekf-slam/circle_fitting.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+
+<p>The landmark detection pipeline consists of multi-step processing of the raw lidar data.</p>
+
+<div class="mx-auto">
+<ul class="pl-8 md:pl-12 list-decimal">
+    <li>Clustering the lidar scan points</li>
+    <li>Filtering the clusters (by # of points in the cluster)</li>
+    <li>Classifying each cluster as circle/not circle.</li>
+    <li>Fitting circles to the clusters that made it through.</li>
+    <li>Filtering the results based on our assumptions on the environment and landmarks. E.g. allowable radius of landmark.</li>
+  </ul>
+</div>
+
+<h1 id="simulation">Simulation</h1>
+
+<iframe src="https://www.youtube-nocookie.com/embed/vc0cHPwj2pw?si=TI10ZDo4-zkX81_B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+<p><br />
+This video shows the implementation in simulation. The visualization shows 3 robots, a blue turtlebot which represents the odometry estimation, a red one which is the ground truth in the implemented simulation, and the green one which is the estimation based on the EKF. The path corresponding to each robot is also shown.
+<br /></p>
+
+<p>A full simulation environment was implemented as a ROS2 node. The simulation performs the forward kinematics based on velocity commands, and moves the robot accordingly. Noise &amp; wheel slip are introduced sampling from Gaussian distributions for a more realistic environment. The environment provides configurable landmarks (cylinders) and walls. A simulated lidar sensor generates measurements based on the robot’s location in the environment, just like its real counterpart.
+<br />
+<br />
+A list of features of the simulation environment follows:</p>
+
+<div class="w-11/12 mx-auto">
+<li><span class="font-semibold">Landmarks &amp; walls</span>: the environment is enclosed in 4 simulated walls. Configurable cylindrical landmarks allow the user to test the performance on different scenarios.</li>
+<li><span class="font-semibold">Simulated LiDAR measurements</span>: the EKF relies on measurements extensively. Having implemented the simulated measurements, it is possible to fully develop and test the EKF in simulation. The generated measurements include Gaussian noise.</li>
+<li><span class="font-semibold">Collisions</span>: the robot can collide with landmarks, the wheels will slip and the robot will glide tangential to the landmark it collided with. This is helpful for creating a large difference between the odometry estimate and the real robot location. Also, real robots do crash!</li>
+<li><span class="font-semibold">Noise &amp; wheel slip</span>: Besides noise on the simulated LiDAR, real wheels on the real world slip, motors do not respond ideally, so adding random wheel slip makes the environment more realistic.</li>
+</div>
+
+<h1 id="real-world-test">Real world test</h1>
+
+<p>The simulation can only get us so far, especially if we don’t have accurate models of our sensor noise, slip, and motor responses. Getting the filter working on the real robot required a lot of tuning, especially the noise parameters in the EKF and parameters in the landmark association.
+<br />
+<br />
+This post’s main video shows the algorithm working on a real Turtlebot 3 burger. The video shows the data being fed back to a PC and shown in Rviz2. The robot is driven around a course, and back to its initial position. The wheel odometry is pretty far from the actual position, while the SLAM estimation provides a better idea of where the robot is. The course is pretty simple, and carton walls were added due to the cluttered environment that produced many landmarks (which can be as bad as good!).</p>
+
+<h1 id="qualitative-results">Qualitative Results</h1>
+
+<p>Driving the robot around the course and taking it back to its initial pose (eye-measuring using a mark on the floor, shown in the main video).
+<br />
+<br />
+Final SLAM estimation <code class="language-plaintext highlighter-rouge">(x,y,theta): (-0.02, 0.01, -0.06)</code>
+<br />
+Final odometry estimation <code class="language-plaintext highlighter-rouge">(x,y,theta): (0.02, 0.24, -0.67)</code></p>
 
         </div>
 		
