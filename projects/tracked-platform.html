@@ -86,12 +86,12 @@
 	<section id="project-content">
         <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal max-w-screen-xl">
             
-            <h2 id="project-date" class="text-right text-sm md:text-md font-normal my-4">October, 2023</h2>
+            <h2 id="project-date" class="text-right text-sm md:text-md font-normal my-4">March, 2021</h2>
             <h1 class="tracking-tight text-center leading-none relative mb-6 mt-0 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
-                <span class="relative z-10">Monte Carlo Localization</span>
+                <span class="relative z-10">Tracked robotic platform</span>
             </h1>
             <h1 class="tracking-tight text-center text-sm md:text-lg">
-                <span class="relative z-10">Particle filter for localization in Python.</span>
+                <span class="relative z-10">DIY tracked mobile base.</span>
             </h1>
             <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
@@ -99,84 +99,52 @@
 
             <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">python</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">prototyping</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">numpy</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">brushless</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">filter</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">odrive</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">localization</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">servos</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">matplotlib</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">wireless</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">particle filter</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">3d printing</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">motion model</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">CAD</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">simulation</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">mechatronics</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">kinematics</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ROS</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">probabilistic</div>
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">arduino</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">electronics</div>
                 
               </div>
             
-            <h2 id="overview">Overview</h2>
+            <h3 id="overview">Overview</h3>
 
-<p><img src="../public/images/projects/particle-filter/dead-reckoning-vs-ground-truth.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Image 1: Dead reckoning motion model vs. ground truth robot position.</div>
-<p><br />
+<p>This project’s objective is to create a tracked robot for ROS development, that looks less like a science project and more like an actual product. These kind of platforms are increasingly used for surveillance, search and rescue, tasks involving mapping, and a plethora of other scenarios. The top cover doubles as a payload bay, and can be modified to allow for many payload configurations.
 <br />
-Python implementation of a Particle Filter for robot localization. This work was done for <span class="italic">Machine Learning and Artificial Intelligence for Robotics</span>, an elective course I took in my MSR journey. The implementation is based on the particle filter as explained in <span class="italic">Probabilistic Robotics, by Thrun, Sebastian; Wolfram, Burgard; Fox, Dieter. MIT Press Books, 2006</span>.
+<br />
+Commercially available robotics products are extremely expensive for hobby-level tinkering. On the other hand, most DIY platforms lack on finish and payload versatility. I intend to show that something clean can be made with not too many tools. Let’s blur the line between hobby development and commercial platforms!
+<br />
+<br />
+This project makes use of one of my previous projects for control, the <a class="text-blue-200 underline" href="/projects/ground-station">Ground Control Station</a>.
+<br />
+<br />
+Unlike most of the hobby DIY projects, I’d like this to be a ready to go platform, just flip a switch and use it.</p>
+
+<iframe src="https://www.youtube-nocookie.com/embed/Y4VBscJynfI?si=r6JzZzVYrHN_3_-D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<p>The platform is featured in the <a class="text-blue-200 underline" href="https://youtu.be/LFOkPUE-_iU?si=DgQYgVnPWF13fz2V" target="_blank">Ground Control Station Hackaday Prize Promo video</a>.
 <br />
 <br /></p>
-<div class="text-center font-medium">Check this project's repository on <a href="https://github.com/maxipalay/particle-filter" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
 
-<h3 id="why-particle-filters">Why particle filters?</h3>
-
-<p>Robot localization is a complex problem. Any physical interaction between a robot and its environment provides uncertainty. Wheels slip, actuators dont have instantaneous responses, friction is variable, etc.
-<br />
-<br />
-Motion models provide an estimation of the robot movement based on its actuators position/speed. The interaction robot-environment is extremely hard to model, but making an ideal motion model (dead reckoning) is fairly simple (in this case we are talking about a differential drive robot). Sensors can help fine tune the estimation of the robot’s localization. So we need a way to combine that information to retrieve a position estimate. This is where the Particle Filter helps, combining a motion model, a measurement model and probabilistic techniques to get state estimation. A good example of why dead reckoning is not a useful long-term is shown in the image Image 1.</p>
-
-<h3 id="particle-filters">Particle Filters</h3>
-
-<p>The particle filter is a nonparametric variant of the Bayesian filter. The posterior’s distribution is represented by a
-set of particles representing possible states, instead of mathematically representing the posterior’s distribution. On
-each iteration, the filter samples a finite number of particles from the motion model, and then weighs each one based
-on sensor measurements. In the resampling step, the best particles -according to measurements- are retained.
-Although sampling particles from the motion model might seem to make the state diverge due to the probabilistic nature of it, the
-resampling step selects the “best candidates”, and is what makes the filter converge.</p>
-
-<h3 id="implementation">Implementation</h3>
-
-<p>The motion and measurement models are fundamental for the particle filter’s implementation. But there are other
-important aspects as well, such as the weighting function, and the resampling step. While implementing the filter
-one might come across several edge cases where considerations must be taken. As an example, how should the filter
-behave if there are no measurements? And if there are multiple? If the filter tracks states of N particles, how does
-one get a single prediction? Each one of these points is briefly treated next.</p>
-
-<h2 id="results">Results</h2>
-
-<p><img src="../public/images/projects/particle-filter/results-plots.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Image 2: Means of the states of the Particle Filter vs. Ground truth. N is 100, 200, 400, 1000 (left to right).</div>
-<p><br />
-<br />
-Tests were performed for multiple values of N (100, 200, 400, 1000) and the plots for the filter’s output means and the ground truth are shown in Image 2. The heading of the robot is not plotted here for ease of understanding. The filter was seeded with the initial location of the robot.
-<img src="../public/images/projects/particle-filter/results-table.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Table 1: Mean error for different number of particles.</div>
-<p><br />
-<br />
-The achieved mean error is shown in Table 1. Logically, for a larger number of particles the error decreases. Tests were also performed where the filter was not seeded with the initial location, but with a zero-mean distribution.
-Unlike the seeded filter, which closely matches the ground truth since the beginning, the unseeded one progressively
-gets closer to the ground truth each timestep, until the state reaches the same as if it was seeded.</p>
-
-<h3 id="attribution">Attribution</h3>
-
-<p>The dataset used is a modified version of the work made available by Keith Leung, Yoni Halpern, Tim Barfoot, and Hugh Liu [*]. It was provided by Prof. Brenna Argall in the Fall 2023 edition of the course <span class="italic">Machine Learning and Artificial Intelligence for Robotics</span>.
-<br />
-<br />
-<span class="italic">[*] Leung K Y K, Halpern Y, Barfoot T D, and Liu H H T. “The UTIAS Multi-Robot Cooperative Localization and Mapping Dataset”. International Journal of Robotics Research, 30(8):969–974, July 2011.</span></p>
+<div class="text-center">
+For more details check this project out on <a class="text-blue-200 underline" href="https://hackaday.io/project/181500-autonomous-tracked-robotic-platform-ugv" target="_blank">Hackaday.io</a>.
+</div>
 
         </div>
 		

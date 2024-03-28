@@ -88,10 +88,10 @@
             
             <h2 id="project-date" class="text-right text-sm md:text-md font-normal my-4">October, 2023</h2>
             <h1 class="tracking-tight text-center leading-none relative mb-6 mt-0 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
-                <span class="relative z-10">Monte Carlo Localization</span>
+                <span class="relative z-10">Neural Network from scratch</span>
             </h1>
             <h1 class="tracking-tight text-center text-sm md:text-lg">
-                <span class="relative z-10">Particle filter for localization in Python.</span>
+                <span class="relative z-10"></span>
             </h1>
             <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
@@ -99,84 +99,119 @@
 
             <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
                 
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">machine learning</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ai</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">fully connected</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">neural network</div>
+                
                 <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">python</div>
                 
                 <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">numpy</div>
                 
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">filter</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">localization</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">matplotlib</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">particle filter</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">motion model</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">simulation</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">kinematics</div>
-                
-                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">probabilistic</div>
-                
               </div>
             
-            <h2 id="overview">Overview</h2>
+            <h3 id="overview">Overview</h3>
 
-<p><img src="../public/images/projects/particle-filter/dead-reckoning-vs-ground-truth.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Image 1: Dead reckoning motion model vs. ground truth robot position.</div>
-<p><br />
-<br />
-Python implementation of a Particle Filter for robot localization. This work was done for <span class="italic">Machine Learning and Artificial Intelligence for Robotics</span>, an elective course I took in my MSR journey. The implementation is based on the particle filter as explained in <span class="italic">Probabilistic Robotics, by Thrun, Sebastian; Wolfram, Burgard; Fox, Dieter. MIT Press Books, 2006</span>.
+<p>Created a fully connected neural network form scratch in python using numpy. Hyperparameters are fully configurable by the user, who can set the number of layers and number of neurons per layer, number of inputs and outputs, and more.
 <br />
 <br /></p>
-<div class="text-center font-medium">Check this project's repository on <a href="https://github.com/maxipalay/particle-filter" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
+<div class="text-center font-medium">This project's source code is available on <a href="https://github.com/maxipalay/fully-connected-neural-net" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
 
-<h3 id="why-particle-filters">Why particle filters?</h3>
+<h2 id="neural-networks">Neural Networks</h2>
 
-<p>Robot localization is a complex problem. Any physical interaction between a robot and its environment provides uncertainty. Wheels slip, actuators dont have instantaneous responses, friction is variable, etc.
+<p>In this project a subset of neural networks is implemented -feed forward, fully connected networks- using
+perceptrons as the units for computation and learning. The perceptron is a unit which takes n inputs, performs a
+linear combination of them, this result is then fed through an activation function, and at the end gives a single output.
+A representation of a perceptron is presented in Image 1.</p>
+
+<p><img src="../public/images/projects/neural-network-from-scratch/neuron.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 1: Graphical representation of a Perceptron.</div>
+<p><br /></p>
+
+<p>The linear combination is done using weights, which are learnable parameters of the perceptron, and a bias -which
+is also a learnable parameter- is added to the result. The bias can either be seen as a weight multiplying a fixed input
+of 1, or as a number added to the linear combination. The “learning” on a perceptron involves adjusting the set of
+weights and biases to minimize the error between the output of the perceptron and a target output for a set of given
+inputs.
 <br />
 <br />
-Motion models provide an estimation of the robot movement based on its actuators position/speed. The interaction robot-environment is extremely hard to model, but making an ideal motion model (dead reckoning) is fairly simple (in this case we are talking about a differential drive robot). Sensors can help fine tune the estimation of the robot’s localization. So we need a way to combine that information to retrieve a position estimate. This is where the Particle Filter helps, combining a motion model, a measurement model and probabilistic techniques to get state estimation. A good example of why dead reckoning is not a useful long-term is shown in the image Image 1.</p>
+The role of the activation function is to add nonlinearity to the behavior of the perceptron. Functions such as
+sigmoid, rectified linear units (ReLU), or hyperbolic tangent are widely used as activations for perceptrons.
+While a single perceptron is capable of learning simple problems, a combination of multiple perceptrons is needed
+to allow for learning complex nonlinear functions. Perceptrons can be stacked vertically (one layer with multiple
+perceptrons) and horizontally (multiple layers, where the output of the previous layer is fed as input to the next
+layer), to form networks with varying architectures. A visual representation of a multilayer network as the one
+mentioned is shown in Image 2.</p>
 
-<h3 id="particle-filters">Particle Filters</h3>
+<p><img src="../public/images/projects/neural-network-from-scratch/network.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 2: Feedforward multi-layer neural network.</div>
+<p><br /></p>
 
-<p>The particle filter is a nonparametric variant of the Bayesian filter. The posterior’s distribution is represented by a
-set of particles representing possible states, instead of mathematically representing the posterior’s distribution. On
-each iteration, the filter samples a finite number of particles from the motion model, and then weighs each one based
-on sensor measurements. In the resampling step, the best particles -according to measurements- are retained.
-Although sampling particles from the motion model might seem to make the state diverge due to the probabilistic nature of it, the
-resampling step selects the “best candidates”, and is what makes the filter converge.</p>
+<p>The network depicted above consists of fully connected layers, meaning that each output of a layer is fed to every
+input of the next layer. Each big circle is a full perceptron as previously explained. This is the variation of neural
+networks considered for the scope of this homework. The first layer is usually referred to as an input layer and
+consists of the inputs being fed into the network. Subsequent layers are called hidden layers, except for the last one,
+which is referred to as the output layer. In this case, the network has n inputs and a single output, but this is
+configurable to accommodate any combination of m inputs and n outputs.</p>
 
-<h3 id="implementation">Implementation</h3>
+<h2 id="gradient-descent--backpropagation">Gradient Descent &amp; Backpropagation</h2>
 
-<p>The motion and measurement models are fundamental for the particle filter’s implementation. But there are other
-important aspects as well, such as the weighting function, and the resampling step. While implementing the filter
-one might come across several edge cases where considerations must be taken. As an example, how should the filter
-behave if there are no measurements? And if there are multiple? If the filter tracks states of N particles, how does
-one get a single prediction? Each one of these points is briefly treated next.</p>
+<p>The basis for minimizing the error -or fitting the network- is gradient descent. The network begins training with an
+arbitrary state, and gradient descent is the search algorithm that allows finding a set of weights that minimizes the
+error by iteratively updating the set of weights a small amount according to the gradient of the error surface.
+One variant of gradient descent is stochastic gradient descent, where instead of calculating the error for all training
+examples and then updating the weights, the error is calculated, and weights are updated for each sample.
+<br />
+<br />
+Gradient descent provides a direct way of optimizing the weights for a layer. But in the case of multilayer networks,
+we need a way to propagate the update of weights to all layers. Backpropagation is an algorithm that provides a
+way of updating all weights in a network while using gradient descent to optimize. The goal of backpropagation is
+to minimize the error between the target values and the actual outputs.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The implementation was performed using object-oriented programming in python. A class named <code class="language-plaintext highlighter-rouge">FCLayer</code>
+represents a fully connected layer, including its weights and biases, the activation function and the derivative of the
+activation function which is used for backpropagation. A class <code class="language-plaintext highlighter-rouge">NN</code> represents the neural network and stores a list of
+layers. It provides methods for training the network using backpropagation and performing inference.
+<br /></p>
+
+<p>A summary of parameters that are relevant for training:</p>
+<div class="w-11/12 mx-auto">
+<li>Network architecture: number of layers, neurons per layer</li>
+<li>Batch size</li>
+<li>Number of epochs: number of times the network updates on the whole set of training data</li>
+<li>Error threshold: threshold to stop training</li>
+<li>Learning rate</li>
+<li>Momentum</li>
+</div>
 
 <h2 id="results">Results</h2>
 
-<p><img src="../public/images/projects/particle-filter/results-plots.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Image 2: Means of the states of the Particle Filter vs. Ground truth. N is 100, 200, 400, 1000 (left to right).</div>
+<p>The implemented network is tested with the goal of learning a noisy sine function. This single-input-single-output problem is on the simple end of functions that a neural network can
+learn, but it is a good check to see if the network learns. It was extensively used while developing the algorithm for
+fast, simple checks.
+<br />
+<br />
+<img src="../public/images/projects/neural-network-from-scratch/results.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 3: Plots for test of model learning the sine function. The left plot shows the RMSE for both the training set and the validation for each epoch. The rightmost plot shows the ground truth data with added noise (hence the thickness of the plot), and predictions
+for both the training set and validation set.</div>
 <p><br />
+Random values were generated in the range [0,2𝜋], shuffled and passed through a sine function. Gaussian noise
+was added to the results of the sine function. The generated values were then normalized to the range [0,1]. A part
+(15%) of the generated samples was set aside for validation/evaluation. The model was then trained on the remaining
+85% of the generated samples. The evolution of error over training and a plot of predictions on both training and
+evaluation sets are shown in Figure 3.
 <br />
-Tests were performed for multiple values of N (100, 200, 400, 1000) and the plots for the filter’s output means and the ground truth are shown in Image 2. The heading of the robot is not plotted here for ease of understanding. The filter was seeded with the initial location of the robot.
-<img src="../public/images/projects/particle-filter/results-table.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
-<div class="italic text-center font-xs">Table 1: Mean error for different number of particles.</div>
-<p><br />
 <br />
-The achieved mean error is shown in Table 1. Logically, for a larger number of particles the error decreases. Tests were also performed where the filter was not seeded with the initial location, but with a zero-mean distribution.
-Unlike the seeded filter, which closely matches the ground truth since the beginning, the unseeded one progressively
-gets closer to the ground truth each timestep, until the state reaches the same as if it was seeded.</p>
+In this case, several configurations were tested, and the final one proved to strike a good balance between low
+overfit, fast training time and overall low error. The model used consists of three layers, two of 20 neurons, and an
+output layer of 1 neuron. The learning rate used was 0.1, momentum was left default at 0.6. Batch size used is 64
+samples.</p>
 
-<h3 id="attribution">Attribution</h3>
-
-<p>The dataset used is a modified version of the work made available by Keith Leung, Yoni Halpern, Tim Barfoot, and Hugh Liu [*]. It was provided by Prof. Brenna Argall in the Fall 2023 edition of the course <span class="italic">Machine Learning and Artificial Intelligence for Robotics</span>.
-<br />
-<br />
-<span class="italic">[*] Leung K Y K, Halpern Y, Barfoot T D, and Liu H H T. “The UTIAS Multi-Robot Cooperative Localization and Mapping Dataset”. International Journal of Robotics Research, 30(8):969–974, July 2011.</span></p>
 
         </div>
 		
