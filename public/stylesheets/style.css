@@ -1082,6 +1082,10 @@ video {
   background-position: center;
 }
 
+.bg-\[center_-180px_top\] {
+  background-position: center -180px top;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -1626,6 +1630,10 @@ h3 {
 
   .md\:bg-left {
     background-position: left;
+  }
+
+  .md\:bg-center {
+    background-position: center;
   }
 
   .md\:py-0 {
