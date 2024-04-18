@@ -762,6 +762,10 @@ video {
   height: 100dvh;
 }
 
+.h-\[calc\(100dvh\)\] {
+  height: calc(100dvh);
+}
+
 .min-h-\[512px\] {
   min-height: 512px;
 }
