@@ -31,3 +31,9 @@ h3 {
 .scrolled-gh-logo {
     background-image: url('../logos/github-long-black.png');
   }
+
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
+  }

@@ -730,20 +730,12 @@ video {
   height: 8rem;
 }
 
-.h-4 {
-  height: 1rem;
-}
-
 .h-6 {
   height: 1.5rem;
 }
 
 .h-8 {
   height: 2rem;
-}
-
-.h-\[100svh\] {
-  height: 100svh;
 }
 
 .h-full {
@@ -756,14 +748,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-dvh {
-  height: 100dvh;
-}
-
-.h-\[calc\(100dvh\)\] {
-  height: calc(100dvh);
 }
 
 .min-h-\[512px\] {
@@ -784,6 +768,10 @@ video {
 
 .w-11\/12 {
   width: 91.666667%;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-2 {
@@ -832,18 +820,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-12 {
-  width: 3rem;
 }
 
 .min-w-32 {
@@ -948,22 +924,16 @@ video {
   gap: 2rem;
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded {
@@ -1082,16 +1052,12 @@ video {
   background-attachment: fixed;
 }
 
-.bg-\[left_-180px_top\] {
-  background-position: left -180px top;
+.bg-\[center_-180px_top\] {
+  background-position: center -180px top;
 }
 
 .bg-center {
   background-position: center;
-}
-
-.bg-\[center_-180px_top\] {
-  background-position: center -180px top;
 }
 
 .bg-no-repeat {
@@ -1475,6 +1441,12 @@ h3 {
   background-image: url('../logos/github-long-black.png');
 }
 
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
 .hover\:scale-\[1\.02\]:hover {
   --tw-scale-x: 1.02;
   --tw-scale-y: 1.02;
@@ -1634,14 +1606,6 @@ h3 {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .md\:bg-left {
-    background-position: left;
-  }
-
-  .md\:bg-center {
-    background-position: center;
   }
 
   .md\:py-0 {
