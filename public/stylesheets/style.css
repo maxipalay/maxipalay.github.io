@@ -678,6 +678,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -750,12 +754,36 @@ video {
   height: 100vh;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
 .min-h-\[512px\] {
   min-height: 512px;
 }
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[256px\] {
+  min-height: 256px;
+}
+
+.min-h-\[400px\] {
+  min-height: 400px;
+}
+
+.min-h-\[128px\] {
+  min-height: 128px;
 }
 
 .w-1\/2 {
@@ -1148,6 +1176,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .pb-16 {
