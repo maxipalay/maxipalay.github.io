@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="bg-fixed bg-no-repeat bg-[center_-180px_top] bg-center bg-cover bg-blend-multiply bg-slate-700 h-screen"
+  style="background-image: url('/public/images/jumbotron-bg.jpg')">
+  
+  <script type="text/javascript">
+    (function (window, document, dataLayerName, id) {
+      window[dataLayerName] = window[dataLayerName] || [], window[dataLayerName].push({ start: (new Date).getTime(), event: "stg.start" }); var scripts = document.getElementsByTagName('script')[0], tags = document.createElement('script');
+      function stgCreateCookie(a, b, c) { var d = ""; if (c) { var e = new Date; e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3), d = "; expires=" + e.toUTCString(); f = "; SameSite=Strict" } document.cookie = a + "=" + b + d + f + "; path=/" }
+      var isStgDebug = (window.location.href.match("stg_debug") || document.cookie.match("stg_debug")) && !window.location.href.match("stg_disable_debug"); stgCreateCookie("stg_debug", isStgDebug ? 1 : "", isStgDebug ? 14 : -1);
+      var qP = []; dataLayerName !== "dataLayer" && qP.push("data_layer_name=" + dataLayerName), isStgDebug && qP.push("stg_debug"); var qPString = qP.length > 0 ? ("?" + qP.join("&")) : "";
+      tags.async = !0, tags.src = "https://maxpalay.containers.piwik.pro/" + id + ".js" + qPString, scripts.parentNode.insertBefore(tags, scripts);
+      !function (a, n, i) { a[n] = a[n] || {}; for (var c = 0; c < i.length; c++)!function (i) { a[n][i] = a[n][i] || {}, a[n][i].api = a[n][i].api || function () { var a = [].slice.call(arguments, 0); "string" == typeof a[0] && window[dataLayerName].push({ event: n + "." + i + ":" + a[0], parameters: [].slice.call(arguments, 1) }) } }(i[c]) }(window, "ppms", ["tm", "cm"]);
+    })(window, document, 'dataLayer', '09cea3cf-ceae-4c5f-b845-21cfd41901d3');
+  </script>
+  
+  <div id="wrapper">
+
+    <script>
+    // JavaScript to handle scrolling color change
+    window.addEventListener('scroll', function() {
+      var navbar = document.getElementById('navbar');
+      var logo = document.getElementById('logo');
+      var navitems = document.getElementById('navbar-items')
+      var scrolled = window.scrollY > 50;
+      var gh_logo = document.getElementById('gh-logo');
+
+      // Adjust the background color based on the scroll position
+      if (scrolled) {
+        navbar.classList.add('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.remove('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+        gh_logo.classList.toggle('default-gh-logo', !scrolled);
+        gh_logo.classList.toggle('scrolled-gh-logo', scrolled);
+      } else {
+        navbar.classList.remove('bg-[#f9f9f9]/[1.0]');
+        navbar.classList.add('bg-[#f9f9f9]/[.1]');
+        logo.classList.toggle('default-logo', !scrolled);
+        logo.classList.toggle('scrolled-logo', scrolled);
+        navitems.classList.toggle('text-white', !scrolled);
+        navitems.classList.toggle('text-black', scrolled);
+        gh_logo.classList.toggle('default-gh-logo', !scrolled);
+        gh_logo.classList.toggle('scrolled-gh-logo', scrolled);
+      }
+    });
+</script>
+
+<nav id="navbar" class="bg-[#f9f9f9]/[.1] fixed w-full z-20 top-0 start-0 transition ease-in-out duration-200">
+    <div class="max-w-screen-xl flex flex-nowrap items-center justify-between mx-auto p-4 px-10">
+        <a id="logo" href="/" class="flex items-center space-x-3 rtl:space-x-reverse h-8 w-3/12 min-w-32 bg-no-repeat bg-contain bg-center default-logo"></a>
+        <div class="w-full block w-auto justify-end flex" id="navbar-default">
+          <ul id="navbar-items" class="text-white text-xs md:text-sm font-medium subpixel-antialiased flex p-0 mt-0 flex-row md:space-x-8 space-x-2 rtl:space-x-reverse border-0">
+            <li>
+              <a href="/" class="block bg-blue-700 rounded bg-transparent p-0 dark:hover:text-blue-500">Home</a>
+            </li>
+            <li>
+              <a href="/about/" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">About</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/max-palay/" target="_blank" class="block rounded hover:bg-gray-100 hover:bg-transparent border-0 hover:text-blue-700 p-0 dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white dark:hover:bg-transparent">Contact</a>
+            </li>
+            <li>
+              <a id="gh-logo" href="https://github.com/maxipalay" target="_blank" class="block rounded border-0 p-0 h-full w-12 bg-no-repeat bg-contain bg-center default-gh-logo">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+    <main class="project backdrop-filter backdrop-blur-md bg-opacity-80 bg-slate-800 min-h-screen" >
+	<section id="project-content">
+        <div class="py-20 w-9/12 md:w-8/12 mx-auto text-white text-justify text-sm md:text-lg font-normal max-w-screen-xl">
+            
+            <h2 id="project-date" class="text-right text-sm md:text-md font-normal my-4">February, 2024</h2>
+            <h1 class="tracking-tight text-center leading-none relative mb-6 mt-0 text-2xl font-semibold text-slate-50 md:text-3xl lg:text-5xl px-16 lg:px-48">
+                <span class="relative z-10">Cable driven parallel robot</span>
+            </h1>
+            <h1 class="tracking-tight text-center text-sm md:text-lg">
+                <span class="relative z-10">Design, build and control of a cable driven robot.</span>
+            </h1>
+            <div class="h-0.5 w-1/2 my-8 content-center mx-auto relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-white/100 to-black/0 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 font-mono text-white text-sm font-bold rounded-lg justify-center mx-auto">
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">ros2</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">python</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">kinematics</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">control</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">odrive</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">mechatronics</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">CAD</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">mechanical design</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">electronics</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">git</div>
+                
+                <div class="px-2 py-1 rounded-lg flex items-center justify-center bg-blend-multiply bg-slate-500">direct drive</div>
+                
+              </div>
+            
+            <iframe src="https://www.youtube-nocookie.com/embed/D8p1OpyHBt0?si=5eKEcVY6Bu1kGZC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<p><br /></p>
+<div class="text-center font-medium">This project's source code and documentation is available on <a href="https://github.com/maxipalay/minimec-ros2" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long.png" /></a></div>
+
+<h1 id="overview">Overview</h1>
+
+<p>Cable-driven robots are a special type of robotic system that uses flexible cables instead of rigid arms to control movement. They stand out for their lightweight design, large workspaces, and ability to handle heavy loads efficiently. Unlike traditional robots, cable robots can be more cost-effective, scalable, and adaptable to different applications, from motion simulators to large-scale 3D printing.
+<br />
+<!--
+This project started as a prototype for a Lab at Northwestern University. The lab performs experiments and tracks bodies on a flat surface, and needs to follow the bodies from above at variable heights. Multiple reasons made a Cable Driven Parallel Robot (CDPR) the choice to solve this problem, including: 
+-->
+<!--
+Fast acceleration: the tracked objects accelerate at high rates, so having a lightweight end effector with minimal intertia is desired.
+Low noise: besides the high frequency sounds of servo drives, the noise the robot makes is small compared to other architectures. Further, the drives could be boxed in muffling enclosures.
+Low visual disturbance: the Lab has a camera system above the surface, and avoiding any large occlusions is desirable.
+-->
+<br />
+This project is an attempt at making a 5-degree of freedom (DOF) cable driven parallel robot (CDPR). The mechianical design is simple but functional, and using common hardware and fabrication techniques was prioritized. Control of the robot was programmed using the Python API of ROS2. The system is designed to constantly receive target positions and reaching them quickly.</p>
+
+<h1 id="system-architecture">System architecture</h1>
+
+<p>The software running this robot is based on ROS2 Iron, Python and Arduino C++. Image 1 depicts an overview of the system, including the hardware and software. Low level motor control is handled by Odrive S1’s, which are connected to the Teensy 4.1 microcontroller via CAN bus. The communication between the microcontroller and the Odrives is perfomed using the Odrive Arduino library. Information exchange between the laptop running the Python/ROS2 software and the microcontroller is done via USB. In this case, the information is transmitted as strings.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cdpr-system-diagram.png" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 1: High level system architecture. Boxes represent nodes, arrows represent information exchange. Ellipses represent ROS2 topics. This diagram is not exhaustive.</div>
+<p><br />
+<br />
+The ROS2 software running on the computer is separated into multiple nodes:</p>
+<div class="w-11/12 mx-auto">
+<li>Inverse kinematics: this node converts an input position (x, y, z) into cable lengths based on the robot model, and feedforward cable tensions. Further, the node also publishes visualization information.</li>
+<li>Hardware driver: serves as an interface in between the microcontroller and the computer. Sends and receives data via serial and sends the necessary data from the ROS topics and makes the incoming data available as ROS topics. The node sends cable lengths and feedforward tensions, and receives feedback on cable lengths and estimated cable tensions.</li>
+<li>Trajectory generator: this node is a sample point generator for the robot to move. Multiple types of paths can be executed using it. At the moment this is a demo node, and some of the trajectories are: 3d grid, a cube, a spiral and a zig-zag pattern.</li>
+</div>
+<p><br /></p>
+
+<h1 id="control">Control</h1>
+
+<p>Keeping cable tensions within a range is critical for the proper operation of a cable-driven robot. Without tension, the cables can slacken or even lose contact with the pulleys, which causes instability and makes precise control nearly impossible. On the other hand, excessive tension increases the risk of damaging the cables, pulleys, or motor mounts, and can lead to increased wear on the entire system.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cdpr-control.png" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 2: High level control.</div>
+<p><br />
+<br />
+<!-- In this system there is no feedback control based on positioning. After calculating the inverse kinematics for a target position, the cable lengths are sent to the microcontroller and then translated into motor positions. It is up to the control provided by the Odrive motor controllers for the motors to reach their target position. This is why proper tuning of the Odrives was important for this system. -->
+Pure position control for the motors proved problematic to keep cable tensions at all times, especially for larger movements. As motors had to move different amounts in between positions, some of the cables lost tension at times. So then a hybrid position + feedforward torque control strategy was selected. The control flow is shown in Image 2.</p>
+
+<h2 id="tensions-distribution">Tensions distribution</h2>
+
+<p>To calculate feedforward torque for the motors, a tension distribution algorithm based on [1] was implemented. This algorithm requires tension bounds for each cable, a the structure matrix for the current position of the robot, and the desired end effector forces. The result is the necessary tension on each cable to achieve the desired force. Ideally, this algorithm would run continuously, updating the structure matrix based on positioning feedback. But as there is no feedback on this system, this calculation is run once when a new target position is requested.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cable-tensions.gif" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Animation 1: Comparison of tension distribution algorithm enabled vs. disabled.</div>
+<p><br />
+<br />
+For a baseline comparison, a simple set of points forming a cube was used to command the robot. The robot was run on the same set of points under the same conditions, but enabling and disabling the tension distribution algorithm. These runs can be seen in Animation 1.
+<br />
+<br />
+While visual feedback is enough to notice that the run with the feedforward tensions performs better in terms of cable slack and wiggle, tensions obtained from the estimated motor torque were recorded for comparison. The plots are shown in Image 3.
+<br />
+<br /></p>
+<div class="mx-auto my-8 center w-5/6 max-w-4xl flex gap-4">
+    <img src="../public/images/projects/cable-driven-robot/tensions_with_td.jpg" alt="" class="w-1/2 rounded-lg" />
+    <img src="../public/images/projects/cable-driven-robot/tensions_without_td.jpg" alt="" class="w-1/2 rounded-lg" />
+</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 3: Comparison of cable tensions with the tension distribution algorithm enabled vs. disabled.</div>
+<p><br />
+<br />
+ Both plots present the tensions for the 8 motors. While the plots are hard to read, it is important to observe two main differences in between them. One of them is the minimum tension peaks, the minimum tension with the tension distribution algorithm is reduced by a factor of 2. The other difference is the overall increase in tension, particularly noticeable in the last 4 movements. Overall, the mean tensions are also higher with the algorithm enabled, as shown in Table 1.
+<br />
+<br /></p>
+<table class="table-auto mx-auto w-5/6 border-collapse border border-gray-300 font-xs">
+  <thead>
+    <tr>
+      <th class="border border-gray-300 p-2">TD enabled</th>
+      <th class="border border-gray-300 p-2">Tension 1</th>
+      <th class="border border-gray-300 p-2">Tension 2</th>
+      <th class="border border-gray-300 p-2">Tension 3</th>
+      <th class="border border-gray-300 p-2">Tension 4</th>
+      <th class="border border-gray-300 p-2">Tension 5</th>
+      <th class="border border-gray-300 p-2">Tension 6</th>
+      <th class="border border-gray-300 p-2">Tension 7</th>
+      <th class="border border-gray-300 p-2">Tension 8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-gray-300 p-2">Yes</td>
+      <td class="border border-gray-300 p-2">19.47</td>
+      <td class="border border-gray-300 p-2">21.22</td>
+      <td class="border border-gray-300 p-2">20.09</td>
+      <td class="border border-gray-300 p-2">21.29</td>
+      <td class="border border-gray-300 p-2">19.95</td>
+      <td class="border border-gray-300 p-2">20.64</td>
+      <td class="border border-gray-300 p-2">21.98</td>
+      <td class="border border-gray-300 p-2">20.14</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2">No</td>
+      <td class="border border-gray-300 p-2">11.61</td>
+      <td class="border border-gray-300 p-2">13.36</td>
+      <td class="border border-gray-300 p-2">11.68</td>
+      <td class="border border-gray-300 p-2">13.40</td>
+      <td class="border border-gray-300 p-2">10.37</td>
+      <td class="border border-gray-300 p-2">13.80</td>
+      <td class="border border-gray-300 p-2">11.95</td>
+      <td class="border border-gray-300 p-2">12.67</td>
+    </tr>
+  </tbody>
+</table>
+<p><br /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Table 1: Comparison of tensions means (N) with tension distribution algorithm enabled vs. disabled.</div>
+
+<h1 id="performance">Performance</h1>
+
+<p>Several performance metrics are relevant for a robotic system like this one; accuracy, repeatability, maximum acceleration, maximum velocity are some of the most important characteristics. While it is important to characterize a system like this, it requires vast amounts of testing and very precise feedback mechanisms to get accurate metrics. Some rough numbers were obtained using feedback from AprilTags and an Intel Realsense camera, capturing data from the cube trajectory run.
+<br />
+<br /></p>
+
+<div class="mx-auto my-8 center w-5/6 max-w-4xl flex gap-4">
+    <img src="../public/images/projects/cable-driven-robot/3d_panning_coil.gif" alt="" class="w-1/2 rounded-lg" />
+    <img src="../public/images/projects/cable-driven-robot/3d_panning_cube.gif" alt="" class="w-1/2 rounded-lg" />
+</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Animation 2: Plots for the coil trajectory and the cube trajectory. Target trajectories plotted in blue, real trajectories plotted in red.</div>
+<p><br />
+<br />
+Animation 2 shows data captured for both the coil trajectory and the cube trajectory. Data from the cube trajectory was post-processed to obtain accuracy metrics. The data points captured were grouped into clusters, and the mean for each cluster was obtained. Those means were then paired to the target positions and then the mean distance was calculated in between each pair of measured and target points. This yielded a value of 0.021 m. Further, velocity was computed from slow motion camera recordings for the same trajectory. The fastest observed speed was estimated to be around 2.4 m/s.</p>
+
+<h1 id="future-work">Future work</h1>
+
+<p>While a working system was achieved, there is a long way to go to have a robust and accurate system. Potential improvements include:</p>
+<div class="w-11/12 mx-auto">
+<br />
+<li>Improve runtime of tension distribution algorithm. The algorithm is currently implemented in Python, and takes about 20ms to run. A more optimized implementation and potentially in C++ would help to decrease the runtime and therefore increase the frequency at which position commands can be issued.</li>
+<br />
+<li>Add feedback control for positioning. The current kinematic model assumes an ideal robot, and it doesn't account for pulley's radii, cable sagging and imperfect cable attachment points, among other issues. So the kinematics will inherently be wrong. Adding feedback control could help achieve greater precision without the need to model all these factors in the kinematic model.</li>
+<br />
+<li>Implement forward kinematics. For these kinds of overconstrained robots, forward kinematics are usually using iterative numerical methods. Applying machine learning for this task could be an interesting use case for that technology, where the model learns the imperfections of the system and can map motor positions to end effector position.</li>
+</div>
+
+<h1 id="references">References</h1>
+
+<p>[1] <a href="https://doi.org/10.1109/ROBOT.2008.4543805">L. Mikelsons, T. Bruckmann, M. Hiller and D. Schramm, “A real-time capable force calculation algorithm for redundant tendon-based parallel manipulators,” 2008 IEEE International Conference on Robotics and Automation, Pasadena, CA, USA, 2008, pp. 3869-3874, doi: 10.1109/ROBOT.2008.4543805.</a></p>
+
+        </div>
+		
+
+	</section>
+
+</main>
+
+
+    
+
+<footer class="rounded-lg shadow bg-[#f9f9f9]/[1.0]">
+    <div class="w-full max-w-screen-xl mx-auto p-4">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="/public/images/logo_acronym_small_black.png" class="h-6" alt="Logo" />
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="/about/" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/maximiliano-palay/" target="_blank" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2024 - Maximiliano Palay</span>
+    </div>
+</footer>
+
+
+
+
+  </div>
+
+  <script>
+    document.getElementById('hide-popup').addEventListener('click', function () {
+      var popup = document.getElementById('popup');
+      popup.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
+</html>
