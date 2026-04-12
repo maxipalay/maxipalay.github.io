@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="home-page home-bg text-stoneink antialiased min-h-screen">
+  
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-paper/70 border-b border-black/5">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex items-center justify-between py-4 px-2 sm:px-4 md:px-10">
+        <a href="/" class="flex items-center">
+          <img src="/public/images/logo_long_black_small.png" alt="Max Palay logo" class="h-6 md:h-7 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-graphite">
+          <a href="/" class="hover:text-stoneink transition">Home</a>
+          <a href="/projects/" class="hover:text-stoneink transition">Projects</a>
+          <a href="/#about" class="hover:text-stoneink transition">About</a>
+          <a href="/#contact" class="hover:text-stoneink transition">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-3 py-2 text-stoneink shadow-soft"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-button>
+          <span class="sr-only">Open navigation menu</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden px-2 sm:px-4 md:px-10 pb-4" data-mobile-menu>
+        <nav class="rounded-[1.25rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft overflow-hidden">
+          <a href="/" class="block px-5 py-4 text-sm text-graphite hover:bg-white/70 transition" data-mobile-menu-link>Home</a>
+          <a href="/projects/" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Projects</a>
+          <a href="/#about" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>About</a>
+          <a href="/#contact" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section class="relative overflow-hidden">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto pt-14 md:pt-16 pb-12 md:pb-16" style="max-width: 76rem;">
+      <div class="project-page__stack">
+        <section class="project-page__hero reveal">
+          <div class="project-page__eyebrow">
+            <p class="project-page__date">September 2023</p>
+          </div>
+
+          <div class="project-page__intro">
+            <h1 class="project-page__title">Give me your pen!</h1>
+            <p class="project-page__subtitle">Pincher grabs pen using CV.</p>
+          </div>
+
+          <div class="project-page__tags">
+            
+            <span class="project-page__tag">python</span>
+            
+            <span class="project-page__tag">realsense</span>
+            
+            <span class="project-page__tag">computer vision</span>
+            
+            <span class="project-page__tag">git</span>
+            
+            <span class="project-page__tag">robot arm</span>
+            
+            <span class="project-page__tag">multiprocessing</span>
+            
+          </div>
+        </section>
+
+        <article class="project-page__content reveal">
+          <h2 id="overview">Overview</h2>
+
+<p>Before starting the MS in Robotics program at Northwestern University, students participate in a Hackathon where they are presented with several challenges. The pen challenge is one of them.
+<br />
+<br />
+Using an Intel Realsense D435 and an Interbotix PX100 arm, students have to locate a Purple pen in space, and get the arm to grab it.</p>
+
+<iframe src="https://www.youtube-nocookie.com/embed/b-JLFLZPSek?si=vWFUCCzoGTORVH1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<div class="text-center font-medium">Check this project's repository on <a href="https://github.com/maxipalay/pen-challenge" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long-black.png" /></a></div>
+
+<h3 id="program-flow">Program flow</h3>
+
+<div class="w-11/12 mx-auto">
+<li><span class="font-semibold">System initialization</span>: the python software start running, establishing a connection with the robot and the camera. The robot is sent to the home position.</li>
+<br />
+<li><span class="font-semibold">Calibration</span>: to measure the relationship between the camera frame and the robot's end effector, the user places the pen on the center of the gripper, the robot retracts and the system measures the pen's position. This way, the system is able to know the offset between arm coordinates and camera coordinates. After calibration, the arm proceeds to pick the pen to confirm the calibration is successful.</li>
+<br />
+<li><span class="font-semibold">User input</span>: the system waits for the user to confirm the pen is ready to be picked. Upon confirmation, the pen's location is transferred to robot coordinates</li>
+<br />
+<li><span class="font-semibold">Pick</span>: one the pen is located, the robot turns its first axis to point towards the pen. As the Pincher is a 4 degree-of-freedom robot, this step is crucial to avoid colliding with the pen.</li>
+<br />
+<li><span class="font-semibold">Rest</span>: robot goes to its sleep position with the pen.</li>
+<br />
+<li><span class="font-semibold">Place (or throw?)</span>: robot goes back to home position and releases the pen.</li>
+<br />
+<li><span class="font-semibold">Repeat</span>: this cycle can keep going. The calibration is only done once, only on the first run.</li>
+</div>
+
+<h3 id="notes">Notes</h3>
+
+<div class="w-11/12 mx-auto">
+This is an introductory level challenge for students going into the MS in Robotics at Northwestern, so there is a lot of freedom as to how to approach the problem, and how to extend it. Many aspects are simplified, mind this is a task to be done in a few hours.
+<br />
+<br />
+The robot and camera are supossed to be at a 90 degree offset. This simplifies the conversion between frames a lot.
+<br />
+<br />
+Multiprocessing was used to separate the camera processing from the robot's communication, as the camera live feed was stuttery when everything was running on the same process.
+</div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  
+<footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
+  <span>2026 - Maximiliano Palay</span>
+</footer>
+
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-mobile-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const links = Array.from(document.querySelectorAll('[data-mobile-menu-link]'));
+
+      if (!button || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const localHashLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+      localHashLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+
+          const header = document.querySelector('header');
+          const headerOffset = header ? header.offsetHeight + 12 : 12;
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      links.forEach((link) => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

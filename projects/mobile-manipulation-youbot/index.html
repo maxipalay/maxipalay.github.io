@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="home-page home-bg text-stoneink antialiased min-h-screen">
+  
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-paper/70 border-b border-black/5">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex items-center justify-between py-4 px-2 sm:px-4 md:px-10">
+        <a href="/" class="flex items-center">
+          <img src="/public/images/logo_long_black_small.png" alt="Max Palay logo" class="h-6 md:h-7 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-graphite">
+          <a href="/" class="hover:text-stoneink transition">Home</a>
+          <a href="/projects/" class="hover:text-stoneink transition">Projects</a>
+          <a href="/#about" class="hover:text-stoneink transition">About</a>
+          <a href="/#contact" class="hover:text-stoneink transition">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-3 py-2 text-stoneink shadow-soft"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-button>
+          <span class="sr-only">Open navigation menu</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden px-2 sm:px-4 md:px-10 pb-4" data-mobile-menu>
+        <nav class="rounded-[1.25rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft overflow-hidden">
+          <a href="/" class="block px-5 py-4 text-sm text-graphite hover:bg-white/70 transition" data-mobile-menu-link>Home</a>
+          <a href="/projects/" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Projects</a>
+          <a href="/#about" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>About</a>
+          <a href="/#contact" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section class="relative overflow-hidden">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto pt-14 md:pt-16 pb-12 md:pb-16" style="max-width: 76rem;">
+      <div class="project-page__stack">
+        <section class="project-page__hero reveal">
+          <div class="project-page__eyebrow">
+            <p class="project-page__date">November 2023</p>
+          </div>
+
+          <div class="project-page__intro">
+            <h1 class="project-page__title">Mobile Manipulation Simulation</h1>
+            <p class="project-page__subtitle">Kuka YouBot Kinematics & controls simulation.</p>
+          </div>
+
+          <div class="project-page__tags">
+            
+            <span class="project-page__tag">python</span>
+            
+            <span class="project-page__tag">numpy</span>
+            
+            <span class="project-page__tag">kinematics</span>
+            
+            <span class="project-page__tag">modern robotics</span>
+            
+            <span class="project-page__tag">kuka</span>
+            
+            <span class="project-page__tag">youbot</span>
+            
+            <span class="project-page__tag">feedforward</span>
+            
+            <span class="project-page__tag">PID</span>
+            
+            <span class="project-page__tag">control</span>
+            
+            <span class="project-page__tag">simulation</span>
+            
+            <span class="project-page__tag">CoppeliaSim</span>
+            
+          </div>
+        </section>
+
+        <article class="project-page__content reveal">
+          <h2 id="overview">Overview</h2>
+
+<p>This project implements a trajectory planner for the end effector of a Kuka YouBot mobile manipulator (mecanum wheel base with a 5R manipulator), and the necessary odometry and feedback control to perform a pick and place task. The implemented python code generates a csv output which is then played using CoppeliaSim. The physics engine simulates the interaction between the gripper and the cube.</p>
+
+<iframe src="https://www.youtube-nocookie.com/embed/q_wZehMJp2Q?si=tJ_HICIAPgsavIt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<h3 id="system-components">System components</h3>
+
+<div class="w-11/12 mx-auto">
+<ul class="list-disc">
+<li><span class="font-semibold">Trajectory generation</span>: Given the cube's initial and final configurations in the space frame, the end effector initial configuration and a grasping configuration w.r.t the cube we can generate a trajectory that performs the pick and place task.  The motion is broken down into segments:
+  <ul class="pl-8 md:pl-12 list-decimal">
+    <li>Screw trajectory from initial pose to pick standoff</li>
+    <li>Cartesian trajectory form pick standoff to pick</li>
+    <li>Cartesian trajectory from pick to pick standoff</li>
+    <li>Screw trajectory from pick standoff to place standoff</li>
+    <li>Cartesian trajectory from place standoff to place</li>
+    <li>Cartesian trajectory from place to place standoff</li>
+  </ul>
+</li>
+<br />
+<li><span class="font-semibold">Odometry</span>: based on commanded joint speeds, we estimate the chassis and robot configuration at each timestep.</li>
+<br />
+<li><span class="font-semibold">Feedback control</span>: a PI+Feedforward controller tracks the end effector error in positioning and generates the desired twist to minimize the error. </li>
+<br />
+<li><span class="font-semibold">Inverse kinematics</span>: based on the desired end effector twist to follow the trajectory, the Jacobian pseudoinverse allows us to translate the deisred twist to joint speeds.</li>
+</ul>
+</div>
+
+<h3 id="implementation-notes">Implementation notes</h3>
+
+<li>As an alternative to implementing self collision, workspace constraints were used for the
+manipulator. These are set so that the manipulator can only operate over a bounded prismatic space in front of the mobile base.
+This keeps the end effector operating only to the “front” of the mobile manipulator. If the
+manipulator would violate these constraints then the Jacobian is put to zero for the whole
+manipulator and only the mobile base would move in such a case. This is a very simplified version of workspace constraints but it is good enough for this project.
+</li>
+<p><br /></p>
+<li>
+A limiter for the integral term was implemented based on the norm of the twist error. Without
+this, the integral term kept increasing very rapidly. This also makes it harder to get the overshoot
+required for one of the sections of the project. The oscillations observed are smaller compared
+to a non-limited version of the I term.
+</li>
+
+<h3 id="results">Results</h3>
+
+<p>For the test presented in the video, the starting end effector position has an initial error of over 0.2m so we can see the operation of the controller.</p>
+
+<p><img src="../public/images/projects/youbot/result-plot.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 1: EE positioning error vs. time.</div>
+<p><br />
+Image 1 shows the error rapidly decreasing to zero for the trajectories tracking. The
+manipulator is able to successfully pick and place the cube for each task. Parameter tuning was
+an important part of getting the system to work, and trying different parameters yields more
+aggressive responses for higher Kp’s.</p>
+
+<h3 id="references">References</h3>
+
+<p><span class="italic">Modern Robotics: Mechanics, Planning and Control, Kevin Lynch and Frank Park, Cambridge University Press, 2017</span></p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  
+<footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
+  <span>2026 - Maximiliano Palay</span>
+</footer>
+
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-mobile-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const links = Array.from(document.querySelectorAll('[data-mobile-menu-link]'));
+
+      if (!button || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const localHashLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+      localHashLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+
+          const header = document.querySelector('header');
+          const headerOffset = header ? header.offsetHeight + 12 : 12;
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      links.forEach((link) => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

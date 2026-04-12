@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="home-page home-bg text-stoneink antialiased min-h-screen">
+  
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-paper/70 border-b border-black/5">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex items-center justify-between py-4 px-2 sm:px-4 md:px-10">
+        <a href="/" class="flex items-center">
+          <img src="/public/images/logo_long_black_small.png" alt="Max Palay logo" class="h-6 md:h-7 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-graphite">
+          <a href="/" class="hover:text-stoneink transition">Home</a>
+          <a href="/projects/" class="hover:text-stoneink transition">Projects</a>
+          <a href="/#about" class="hover:text-stoneink transition">About</a>
+          <a href="/#contact" class="hover:text-stoneink transition">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-3 py-2 text-stoneink shadow-soft"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-button>
+          <span class="sr-only">Open navigation menu</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden px-2 sm:px-4 md:px-10 pb-4" data-mobile-menu>
+        <nav class="rounded-[1.25rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft overflow-hidden">
+          <a href="/" class="block px-5 py-4 text-sm text-graphite hover:bg-white/70 transition" data-mobile-menu-link>Home</a>
+          <a href="/projects/" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Projects</a>
+          <a href="/#about" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>About</a>
+          <a href="/#contact" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section class="relative overflow-hidden">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto pt-14 md:pt-16 pb-12 md:pb-16" style="max-width: 76rem;">
+      <div class="project-page__stack">
+        <section class="project-page__hero reveal">
+          <div class="project-page__eyebrow">
+            <p class="project-page__date">October 2023</p>
+          </div>
+
+          <div class="project-page__intro">
+            <h1 class="project-page__title">Neural Network from scratch</h1>
+            <p class="project-page__subtitle"></p>
+          </div>
+
+          <div class="project-page__tags">
+            
+            <span class="project-page__tag">machine learning</span>
+            
+            <span class="project-page__tag">ai</span>
+            
+            <span class="project-page__tag">fully connected</span>
+            
+            <span class="project-page__tag">neural network</span>
+            
+            <span class="project-page__tag">python</span>
+            
+            <span class="project-page__tag">numpy</span>
+            
+          </div>
+        </section>
+
+        <article class="project-page__content reveal">
+          <h3 id="overview">Overview</h3>
+
+<p>Created a fully connected neural network form scratch in python using numpy. Hyperparameters are fully configurable by the user, who can set the number of layers and number of neurons per layer, number of inputs and outputs, and more.
+<br />
+<br /></p>
+<div class="text-center font-medium">This project's source code is available on <a href="https://github.com/maxipalay/fully-connected-neural-net" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long-black.png" /></a></div>
+
+<h2 id="neural-networks">Neural Networks</h2>
+
+<p>In this project a subset of neural networks is implemented -feed forward, fully connected networks- using
+perceptrons as the units for computation and learning. The perceptron is a unit which takes n inputs, performs a
+linear combination of them, this result is then fed through an activation function, and at the end gives a single output.
+A representation of a perceptron is presented in Image 1.</p>
+
+<p><img src="../public/images/projects/neural-network-from-scratch/neuron.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 1: Graphical representation of a Perceptron.</div>
+<p><br /></p>
+
+<p>The linear combination is done using weights, which are learnable parameters of the perceptron, and a bias -which
+is also a learnable parameter- is added to the result. The bias can either be seen as a weight multiplying a fixed input
+of 1, or as a number added to the linear combination. The “learning” on a perceptron involves adjusting the set of
+weights and biases to minimize the error between the output of the perceptron and a target output for a set of given
+inputs.
+<br />
+<br />
+The role of the activation function is to add nonlinearity to the behavior of the perceptron. Functions such as
+sigmoid, rectified linear units (ReLU), or hyperbolic tangent are widely used as activations for perceptrons.
+While a single perceptron is capable of learning simple problems, a combination of multiple perceptrons is needed
+to allow for learning complex nonlinear functions. Perceptrons can be stacked vertically (one layer with multiple
+perceptrons) and horizontally (multiple layers, where the output of the previous layer is fed as input to the next
+layer), to form networks with varying architectures. A visual representation of a multilayer network as the one
+mentioned is shown in Image 2.</p>
+
+<p><img src="../public/images/projects/neural-network-from-scratch/network.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 2: Feedforward multi-layer neural network.</div>
+<p><br /></p>
+
+<p>The network depicted above consists of fully connected layers, meaning that each output of a layer is fed to every
+input of the next layer. Each big circle is a full perceptron as previously explained. This is the variation of neural
+networks considered for the scope of this homework. The first layer is usually referred to as an input layer and
+consists of the inputs being fed into the network. Subsequent layers are called hidden layers, except for the last one,
+which is referred to as the output layer. In this case, the network has n inputs and a single output, but this is
+configurable to accommodate any combination of m inputs and n outputs.</p>
+
+<h2 id="gradient-descent--backpropagation">Gradient Descent &amp; Backpropagation</h2>
+
+<p>The basis for minimizing the error -or fitting the network- is gradient descent. The network begins training with an
+arbitrary state, and gradient descent is the search algorithm that allows finding a set of weights that minimizes the
+error by iteratively updating the set of weights a small amount according to the gradient of the error surface.
+One variant of gradient descent is stochastic gradient descent, where instead of calculating the error for all training
+examples and then updating the weights, the error is calculated, and weights are updated for each sample.
+<br />
+<br />
+Gradient descent provides a direct way of optimizing the weights for a layer. But in the case of multilayer networks,
+we need a way to propagate the update of weights to all layers. Backpropagation is an algorithm that provides a
+way of updating all weights in a network while using gradient descent to optimize. The goal of backpropagation is
+to minimize the error between the target values and the actual outputs.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The implementation was performed using object-oriented programming in python. A class named <code class="language-plaintext highlighter-rouge">FCLayer</code>
+represents a fully connected layer, including its weights and biases, the activation function and the derivative of the
+activation function which is used for backpropagation. A class <code class="language-plaintext highlighter-rouge">NN</code> represents the neural network and stores a list of
+layers. It provides methods for training the network using backpropagation and performing inference.
+<br /></p>
+
+<p>A summary of parameters that are relevant for training:</p>
+<div class="w-11/12 mx-auto">
+<li>Network architecture: number of layers, neurons per layer</li>
+<li>Batch size</li>
+<li>Number of epochs: number of times the network updates on the whole set of training data</li>
+<li>Error threshold: threshold to stop training</li>
+<li>Learning rate</li>
+<li>Momentum</li>
+</div>
+
+<h2 id="results">Results</h2>
+
+<p>The implemented network is tested with the goal of learning a noisy sine function. This single-input-single-output problem is on the simple end of functions that a neural network can
+learn, but it is a good check to see if the network learns. It was extensively used while developing the algorithm for
+fast, simple checks.
+<br />
+<br />
+<img src="../public/images/projects/neural-network-from-scratch/results.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs">Image 3: Plots for test of model learning the sine function. The left plot shows the RMSE for both the training set and the validation for each epoch. The rightmost plot shows the ground truth data with added noise (hence the thickness of the plot), and predictions
+for both the training set and validation set.</div>
+<p><br />
+Random values were generated in the range [0,2𝜋], shuffled and passed through a sine function. Gaussian noise
+was added to the results of the sine function. The generated values were then normalized to the range [0,1]. A part
+(15%) of the generated samples was set aside for validation/evaluation. The model was then trained on the remaining
+85% of the generated samples. The evolution of error over training and a plot of predictions on both training and
+evaluation sets are shown in Figure 3.
+<br />
+<br />
+In this case, several configurations were tested, and the final one proved to strike a good balance between low
+overfit, fast training time and overall low error. The model used consists of three layers, two of 20 neurons, and an
+output layer of 1 neuron. The learning rate used was 0.1, momentum was left default at 0.6. Batch size used is 64
+samples.</p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  
+<footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
+  <span>2026 - Maximiliano Palay</span>
+</footer>
+
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-mobile-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const links = Array.from(document.querySelectorAll('[data-mobile-menu-link]'));
+
+      if (!button || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const localHashLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+      localHashLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+
+          const header = document.querySelector('header');
+          const headerOffset = header ? header.offsetHeight + 12 : 12;
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      links.forEach((link) => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

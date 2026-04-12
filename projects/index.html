@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="home-page home-bg text-stoneink antialiased min-h-screen">
+  
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-paper/70 border-b border-black/5">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex items-center justify-between py-4 px-2 sm:px-4 md:px-10">
+        <a href="/" class="flex items-center">
+          <img src="/public/images/logo_long_black_small.png" alt="Max Palay logo" class="h-6 md:h-7 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-graphite">
+          <a href="/" class="hover:text-stoneink transition">Home</a>
+          <a href="/projects/" class="hover:text-stoneink transition">Projects</a>
+          <a href="/#about" class="hover:text-stoneink transition">About</a>
+          <a href="/#contact" class="hover:text-stoneink transition">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-3 py-2 text-stoneink shadow-soft"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-button>
+          <span class="sr-only">Open navigation menu</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden px-2 sm:px-4 md:px-10 pb-4" data-mobile-menu>
+        <nav class="rounded-[1.25rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft overflow-hidden">
+          <a href="/" class="block px-5 py-4 text-sm text-graphite hover:bg-white/70 transition" data-mobile-menu-link>Home</a>
+          <a href="/projects/" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Projects</a>
+          <a href="/#about" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>About</a>
+          <a href="/#contact" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  
+
+
+
+
+
+
+
+
+<main id="top">
+  <section class="relative overflow-hidden">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto pt-14 md:pt-16 pb-14 md:pb-16" style="max-width: 76rem;">
+      <div class="max-w-4xl">
+        <p class="mt-3 text-4xl lg:text-5xl xl:text-6xl leading-[0.96] font-semibold tracking-tight text-stoneink m-0">A complete archive of robotics, controls, software, and physical prototyping work.</p>
+        <div class="mt-5 h-[1.75rem] md:h-[2rem]" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-projects" class="pt-6 md:pt-8 pb-20 md:pb-24">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex flex-col gap-3 md:gap-4">
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/cable-driven-robot/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/cdpr.gif" alt="Cable driven parallel robot" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Cable driven parallel robot</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Design, build and control of a cable driven robot.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">Design, build and control of a cable driven robot.</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">kinematics</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">control</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/mecanum-wheel-base/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/mecanum-base.gif" alt="Omnidirectional robot from scratch" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Omnidirectional robot from scratch</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Full design, build and control of a mecanum wheel base.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A ROS2 mecanum platform developed from chassis and electronics through controls, path generation, and physical fabric...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">c++</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">control</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">PID</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/ekf-slam/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/ekf-slam.gif" alt="Extended Kalman Filter SLAM" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Extended Kalman Filter SLAM</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Implementation of kinematics, odometry, simulation and EKF for SLAM from scratch.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">An Extended Kalman Filter implementation covering robot kinematics, landmark extraction, simulation, and real-world s...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">slam</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">c++</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">rviz2</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/nerfbot/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/nerf.gif" alt="Nerfbot" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Nerfbot</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">A robot that searches for targets and blasts them down!</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A multi-subsystem robot combining vision, arm motion, voice input, and hardware interfacing to detect and shoot physi...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">arduino</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">franka</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/prosthesis/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/prosthesis.gif" alt="Bionic prosthesis prototype" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Bionic prosthesis prototype</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Affordable knee and ankle prosthesis prototype.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A low-cost mechatronic prosthesis concept combining custom mechanical design, embedded hardware, and machine-learning...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">mechatronics</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">machine learning</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">tensorflow micro</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">arduino</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/particle-filter/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/particle-filter.gif" alt="Monte Carlo Localization" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Monte Carlo Localization</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Particle filter for localization in Python.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A Python implementation of Monte Carlo localization focused on motion modeling, measurement updates, and resampling f...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">numpy</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">filter</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">localization</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/ground-station/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/rgcs.gif" alt="Ground Control Station" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Ground Control Station</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Control all the things robotics.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A custom ground control station integrating computing, wireless links, operator inputs, and hardware interfaces into ...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">robotics</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ros</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">prototyping</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">electronics</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/mobile-manipulation-youbot/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/kuka-youbot.gif" alt="Mobile Manipulation Simulation" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Mobile Manipulation Simulation</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Kuka YouBot Kinematics & controls simulation.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A full simulation workflow for a Kuka YouBot covering trajectory generation, odometry, inverse kinematics, and feedba...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">numpy</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">kinematics</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">modern robotics</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/pen-challenge/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/pen-challenge.gif" alt="Give me your pen!" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Give me your pen!</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">Pincher grabs pen using CV.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A small perception-and-manipulation system that localizes a pen with a depth camera and executes an autonomous graspi...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">realsense</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">computer vision</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">git</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/cablecam/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/cablecam.gif" alt="Cablecam" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Cablecam</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">DIY cablecam with hobby components & tools.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">A DIY cable camera platform combining embedded control, motion hardware, fabrication, and experimentation into a func...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">mechatronics</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">brushless</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">esc</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">gimbal</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/neural-network-from-scratch/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/images/projects/neural-network-from-scratch/network.png" alt="Neural Network from scratch" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Neural Network from scratch</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">Created a fully connected neural network form scratch in python using numpy. Hyperparameters are fully configurable b...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">machine learning</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">ai</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">fully connected</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">neural network</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        
+        
+        
+        
+        
+        <article class="project-card project-archive-row relative glass-border overflow-hidden rounded-[1.5rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft">
+          <a href="/projects/tracked-platform/" class="block">
+            <div class="project-archive-row__inner">
+              <div class="project-media project-archive-row__media relative overflow-hidden bg-[#ece7df]" style="isolation:isolate;">
+                
+                <img src="/public/gifs/tracked-platform.gif" alt="Tracked robotic platform" class="w-full h-full object-cover" />
+                
+              </div>
+              <div class="project-archive-row__content flex-1 p-4 md:p-5 flex flex-col justify-between md:min-w-0">
+                <div>
+                  <p class="text-xl md:text-2xl font-semibold tracking-tight text-stoneink m-0">Tracked robotic platform</p>
+                  
+                  <p class="mt-1.5 text-[12px] tracking-[0.04em] text-graphite">DIY tracked mobile base.</p>
+                  
+                  <p class="mt-3 text-sm md:text-[15px] text-graphite leading-relaxed">Created a tracked robot for ROS development, that looks less like a science project and more like an actual product. ...</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs text-graphite">
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">prototyping</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">brushless</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">odrive</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">servos</span>
+                  
+                </div>
+              </div>
+              <div class="project-archive-row__arrow hidden md:flex items-start justify-center">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-4 h-[0.8rem] w-[0.8rem] text-stoneink opacity-70">
+                  <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  
+<footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
+  <span>2026 - Maximiliano Palay</span>
+</footer>
+
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-mobile-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const links = Array.from(document.querySelectorAll('[data-mobile-menu-link]'));
+
+      if (!button || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const localHashLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+      localHashLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+
+          const header = document.querySelector('header');
+          const headerOffset = header ? header.offsetHeight + 12 : 12;
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      links.forEach((link) => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+	</script>
+
+	<title>Max's Portfolio</title>
+	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<link rel="stylesheet" href="/public/stylesheets/style.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+
+<body class="home-page home-bg text-stoneink antialiased min-h-screen">
+  
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-paper/70 border-b border-black/5">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto" style="max-width: 76rem;">
+      <div class="flex items-center justify-between py-4 px-2 sm:px-4 md:px-10">
+        <a href="/" class="flex items-center">
+          <img src="/public/images/logo_long_black_small.png" alt="Max Palay logo" class="h-6 md:h-7 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm text-graphite">
+          <a href="/" class="hover:text-stoneink transition">Home</a>
+          <a href="/projects/" class="hover:text-stoneink transition">Projects</a>
+          <a href="/#about" class="hover:text-stoneink transition">About</a>
+          <a href="/#contact" class="hover:text-stoneink transition">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 bg-white/70 px-3 py-2 text-stoneink shadow-soft"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-button>
+          <span class="sr-only">Open navigation menu</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden px-2 sm:px-4 md:px-10 pb-4" data-mobile-menu>
+        <nav class="rounded-[1.25rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft overflow-hidden">
+          <a href="/" class="block px-5 py-4 text-sm text-graphite hover:bg-white/70 transition" data-mobile-menu-link>Home</a>
+          <a href="/projects/" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Projects</a>
+          <a href="/#about" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>About</a>
+          <a href="/#contact" class="block px-5 py-4 text-sm text-graphite border-t border-black/[0.06] hover:bg-white/70 transition" data-mobile-menu-link>Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section class="relative overflow-hidden">
+    <div class="w-11/12 lg:w-9/12 xl:w-8/12 max-w-screen-xl mx-auto pt-14 md:pt-16 pb-12 md:pb-16" style="max-width: 76rem;">
+      <div class="project-page__stack">
+        <section class="project-page__hero reveal">
+          <div class="project-page__eyebrow">
+            <p class="project-page__date">February 2024</p>
+          </div>
+
+          <div class="project-page__intro">
+            <h1 class="project-page__title">Cable driven parallel robot</h1>
+            <p class="project-page__subtitle">Design, build and control of a cable driven robot.</p>
+          </div>
+
+          <div class="project-page__tags">
+            
+            <span class="project-page__tag">ros2</span>
+            
+            <span class="project-page__tag">python</span>
+            
+            <span class="project-page__tag">kinematics</span>
+            
+            <span class="project-page__tag">control</span>
+            
+            <span class="project-page__tag">odrive</span>
+            
+            <span class="project-page__tag">mechatronics</span>
+            
+            <span class="project-page__tag">CAD</span>
+            
+            <span class="project-page__tag">mechanical design</span>
+            
+            <span class="project-page__tag">electronics</span>
+            
+            <span class="project-page__tag">git</span>
+            
+            <span class="project-page__tag">direct drive</span>
+            
+          </div>
+        </section>
+
+        <article class="project-page__content reveal">
+          <iframe src="https://www.youtube-nocookie.com/embed/D8p1OpyHBt0?si=5eKEcVY6Bu1kGZC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<p><br /></p>
+<div class="text-center font-medium">This project's source code and documentation is available on <a href="https://github.com/maxipalay/cable_driven_parallel_robot" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long-black.png" /></a></div>
+
+<h1 id="overview">Overview</h1>
+
+<p>Cable-driven robots are a special type of robotic system that uses flexible cables instead of rigid arms to control movement. They stand out for their lightweight design, large workspaces, and ability to handle heavy loads efficiently. Unlike traditional robots, cable robots can be more cost-effective, scalable, and adaptable to different applications, from motion simulators to large-scale 3D printing.
+<br />
+<!--
+This project started as a prototype for a Lab at Northwestern University. The lab performs experiments and tracks bodies on a flat surface, and needs to follow the bodies from above at variable heights. Multiple reasons made a Cable Driven Parallel Robot (CDPR) the choice to solve this problem, including: 
+-->
+<!--
+Fast acceleration: the tracked objects accelerate at high rates, so having a lightweight end effector with minimal intertia is desired.
+Low noise: besides the high frequency sounds of servo drives, the noise the robot makes is small compared to other architectures. Further, the drives could be boxed in muffling enclosures.
+Low visual disturbance: the Lab has a camera system above the surface, and avoiding any large occlusions is desirable.
+-->
+<br />
+This project is an attempt at making a 5-degree of freedom (DOF) cable driven parallel robot (CDPR). The mechianical design is simple but functional, and using common hardware and fabrication techniques was prioritized. Control of the robot was programmed using the Python API of ROS2. The system is designed to constantly receive target positions and reaching them quickly.</p>
+
+<h1 id="system-architecture">System architecture</h1>
+
+<p>The software running this robot is based on ROS2 Iron, Python and Arduino C++. Image 1 depicts an overview of the system, including the hardware and software. Low level motor control is handled by Odrive S1’s, which are connected to the Teensy 4.1 microcontroller via CAN bus. The communication between the microcontroller and the Odrives is perfomed using the Odrive Arduino library. Information exchange between the laptop running the Python/ROS2 software and the microcontroller is done via USB. In this case, the information is transmitted as strings.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cdpr-system-diagram.png" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 1: High level system architecture. Boxes represent nodes, arrows represent information exchange. Ellipses represent ROS2 topics. This diagram is not exhaustive.</div>
+<p><br />
+<br />
+The ROS2 software running on the computer is separated into multiple nodes:</p>
+<div class="w-11/12 mx-auto">
+<li>Inverse kinematics: this node converts an input position (x, y, z) into cable lengths based on the robot model, and feedforward cable tensions. Further, the node also publishes visualization information.</li>
+<li>Hardware driver: serves as an interface in between the microcontroller and the computer. Sends and receives data via serial and sends the necessary data from the ROS topics and makes the incoming data available as ROS topics. The node sends cable lengths and feedforward tensions, and receives feedback on cable lengths and estimated cable tensions.</li>
+<li>Trajectory generator: this node is a sample point generator for the robot to move. Multiple types of paths can be executed using it. At the moment this is a demo node, and some of the trajectories are: 3d grid, a cube, a spiral and a zig-zag pattern.</li>
+</div>
+<p><br /></p>
+
+<h1 id="control">Control</h1>
+
+<p>Keeping cable tensions within a range is critical for the proper operation of a cable-driven robot. Without tension, the cables can slacken or even lose contact with the pulleys, which causes instability and makes precise control nearly impossible. On the other hand, excessive tension increases the risk of damaging the cables, pulleys, or motor mounts, and can lead to increased wear on the entire system.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cdpr-control.png" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 2: High level control.</div>
+<p><br />
+<br />
+<!-- In this system there is no feedback control based on positioning. After calculating the inverse kinematics for a target position, the cable lengths are sent to the microcontroller and then translated into motor positions. It is up to the control provided by the Odrive motor controllers for the motors to reach their target position. This is why proper tuning of the Odrives was important for this system. -->
+Pure position control for the motors proved problematic to keep cable tensions at all times, especially for larger movements. As motors had to move different amounts in between positions, some of the cables lost tension at times. So then a hybrid position + feedforward torque control strategy was selected. The control flow is shown in Image 2.</p>
+
+<h2 id="tensions-distribution">Tensions distribution</h2>
+
+<p>To calculate feedforward torque for the motors, a tension distribution algorithm based on [1] was implemented. This algorithm requires tension bounds for each cable, a the structure matrix for the current position of the robot, and the desired end effector forces. The result is the necessary tension on each cable to achieve the desired force. Ideally, this algorithm would run continuously, updating the structure matrix based on positioning feedback. But as there is no feedback on this system, this calculation is run once when a new target position is requested.
+<br />
+<br />
+<img src="../public/images/projects/cable-driven-robot/cable-tensions.gif" class="mx-auto my-8 center w-5/6 rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Animation 1: Comparison of tension distribution algorithm enabled vs. disabled.</div>
+<p><br />
+<br />
+For a baseline comparison, a simple set of points forming a cube was used to command the robot. The robot was run on the same set of points under the same conditions, but enabling and disabling the tension distribution algorithm. These runs can be seen in Animation 1.
+<br />
+<br />
+While visual feedback is enough to notice that the run with the feedforward tensions performs better in terms of cable slack and wiggle, tensions obtained from the estimated motor torque were recorded for comparison. The plots are shown in Image 3.
+<br />
+<br /></p>
+<div class="mx-auto my-8 center w-5/6 max-w-4xl flex flex-col md:flex-row gap-4">
+    <img src="../public/images/projects/cable-driven-robot/tensions_with_td.jpg" alt="" class="w-full md:w-1/2 rounded-lg" />
+    <img src="../public/images/projects/cable-driven-robot/tensions_without_td.jpg" alt="" class="w-full md:w-1/2 rounded-lg" />
+</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 3: Comparison of cable tensions with the tension distribution algorithm enabled vs. disabled.</div>
+<p><br />
+<br />
+ Both plots present the tensions for the 8 motors. While the plots are hard to read, it is important to observe two main differences in between them. One of them is the minimum tension peaks, the minimum tension with the tension distribution algorithm is reduced by a factor of 2. The other difference is the overall increase in tension, particularly noticeable in the last 4 movements. Overall, the mean tensions are also higher with the algorithm enabled, as shown in Table 1.
+<br />
+<br /></p>
+<div class="mx-auto my-8 w-5/6 max-w-4xl overflow-x-auto">
+  <table class="table-auto min-w-max border-collapse border border-gray-300 font-xs">
+    <thead>
+      <tr>
+        <th class="border border-gray-300 p-2">TD enabled</th>
+        <th class="border border-gray-300 p-2">Tension 1</th>
+        <th class="border border-gray-300 p-2">Tension 2</th>
+        <th class="border border-gray-300 p-2">Tension 3</th>
+        <th class="border border-gray-300 p-2">Tension 4</th>
+        <th class="border border-gray-300 p-2">Tension 5</th>
+        <th class="border border-gray-300 p-2">Tension 6</th>
+        <th class="border border-gray-300 p-2">Tension 7</th>
+        <th class="border border-gray-300 p-2">Tension 8</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-300 p-2">Yes</td>
+        <td class="border border-gray-300 p-2">19.47</td>
+        <td class="border border-gray-300 p-2">21.22</td>
+        <td class="border border-gray-300 p-2">20.09</td>
+        <td class="border border-gray-300 p-2">21.29</td>
+        <td class="border border-gray-300 p-2">19.95</td>
+        <td class="border border-gray-300 p-2">20.64</td>
+        <td class="border border-gray-300 p-2">21.98</td>
+        <td class="border border-gray-300 p-2">20.14</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">No</td>
+        <td class="border border-gray-300 p-2">11.61</td>
+        <td class="border border-gray-300 p-2">13.36</td>
+        <td class="border border-gray-300 p-2">11.68</td>
+        <td class="border border-gray-300 p-2">13.40</td>
+        <td class="border border-gray-300 p-2">10.37</td>
+        <td class="border border-gray-300 p-2">13.80</td>
+        <td class="border border-gray-300 p-2">11.95</td>
+        <td class="border border-gray-300 p-2">12.67</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><br /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Table 1: Comparison of tensions means (N) with tension distribution algorithm enabled vs. disabled.</div>
+
+<h1 id="performance">Performance</h1>
+
+<p>Several performance metrics are relevant for a robotic system like this one; accuracy, repeatability, maximum acceleration, maximum velocity are some of the most important characteristics. While it is important to characterize a system like this, it requires vast amounts of testing and very precise feedback mechanisms to get accurate metrics. Some rough numbers were obtained using feedback from AprilTags and an Intel Realsense camera, capturing data from the cube trajectory run.
+<br />
+<br /></p>
+
+<div class="mx-auto my-8 center w-5/6 max-w-4xl flex flex-col md:flex-row gap-4">
+    <img src="../public/images/projects/cable-driven-robot/3d_panning_coil.gif" alt="" class="w-full md:w-1/2 rounded-lg" />
+    <img src="../public/images/projects/cable-driven-robot/3d_panning_cube.gif" alt="" class="w-full md:w-1/2 rounded-lg" />
+</div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Animation 2: Plots for the coil trajectory and the cube trajectory. Target trajectories plotted in blue, real trajectories plotted in red.</div>
+<p><br />
+<br />
+Animation 2 shows data captured for both the coil trajectory and the cube trajectory. Data from the cube trajectory was post-processed to obtain accuracy metrics. The data points captured were grouped into clusters, and the mean for each cluster was obtained. Those means were then paired to the target positions and then the mean distance was calculated in between each pair of measured and target points. This yielded a value of 0.021 m. Further, velocity was computed from slow motion camera recordings for the same trajectory. The fastest observed speed was estimated to be around 2.4 m/s.</p>
+
+<h1 id="future-work">Future work</h1>
+
+<p>While a working system was achieved, there is a long way to go to have a robust and accurate system. Potential improvements include:</p>
+<div class="w-11/12 mx-auto">
+<br />
+<li>Improve runtime of tension distribution algorithm. The algorithm is currently implemented in Python, and takes about 20ms to run. A more optimized implementation and potentially in C++ would help to decrease the runtime and therefore increase the frequency at which position commands can be issued.</li>
+<br />
+<li>Add feedback control for positioning. The current kinematic model assumes an ideal robot, and it doesn't account for pulley's radii, cable sagging and imperfect cable attachment points, among other issues. So the kinematics will inherently be wrong. Adding feedback control could help achieve greater precision without the need to model all these factors in the kinematic model.</li>
+<br />
+<li>Implement forward kinematics. For these kinds of overconstrained robots, forward kinematics are usually using iterative numerical methods. Applying machine learning for this task could be an interesting use case for that technology, where the model learns the imperfections of the system and can map motor positions to end effector position.</li>
+</div>
+
+<h1 id="references">References</h1>
+
+<p>[1] <a href="https://doi.org/10.1109/ROBOT.2008.4543805">L. Mikelsons, T. Bruckmann, M. Hiller and D. Schramm, “A real-time capable force calculation algorithm for redundant tendon-based parallel manipulators,” 2008 IEEE International Conference on Robotics and Automation, Pasadena, CA, USA, 2008, pp. 3869-3874, doi: 10.1109/ROBOT.2008.4543805.</a></p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+  
+<footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
+  <span>2026 - Maximiliano Palay</span>
+</footer>
+
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-mobile-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const links = Array.from(document.querySelectorAll('[data-mobile-menu-link]'));
+
+      if (!button || !menu) return;
+
+      const closeMenu = () => {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const localHashLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+      localHashLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetId = link.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          closeMenu();
+
+          const header = document.querySelector('header');
+          const headerOffset = header ? header.offsetHeight + 12 : 12;
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      button.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      links.forEach((link) => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+</body>
+
+</html>
