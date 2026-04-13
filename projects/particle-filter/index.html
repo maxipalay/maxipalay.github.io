@@ -14,6 +14,12 @@
 	<link rel="stylesheet" href="/public/stylesheets/style.css">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script async src="https://plausible.io/js/pa-ollBtVJ7izkW5M7_XoWZe.js"></script>
+	<script>
+		window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) };
+		plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+		plausible.init();
+	</script>
 
 </head>
 
@@ -97,14 +103,14 @@
         <article class="project-page__content reveal">
           <h2 id="overview">Overview</h2>
 
-<p><img src="../public/images/projects/particle-filter/dead-reckoning-vs-ground-truth.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<p><img src="/public/images/projects/particle-filter/dead-reckoning-vs-ground-truth.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
 <div class="italic text-center font-xs">Image 1: Dead reckoning motion model vs. ground truth robot position.</div>
 <p><br />
 <br />
 Python implementation of a Particle Filter for robot localization. This work was done for <span class="italic">Machine Learning and Artificial Intelligence for Robotics</span>, an elective course I took in my MSR journey. The implementation is based on the particle filter as explained in <span class="italic">Probabilistic Robotics, by Thrun, Sebastian; Wolfram, Burgard; Fox, Dieter. MIT Press Books, 2006</span>.
 <br />
 <br /></p>
-<div class="text-center font-medium">Check this project's repository on <a href="https://github.com/maxipalay/particle-filter" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="../public/logos/github-long-black.png" /></a></div>
+<div class="text-center font-medium">Check this project's repository on <a href="https://github.com/maxipalay/particle-filter" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="/public/logos/github-long-black.png" /></a></div>
 
 <h3 id="why-particle-filters">Why particle filters?</h3>
 
@@ -132,12 +138,12 @@ one get a single prediction? Each one of these points is briefly treated next.</
 
 <h2 id="results">Results</h2>
 
-<p><img src="../public/images/projects/particle-filter/results-plots.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
+<p><img src="/public/images/projects/particle-filter/results-plots.png" class="mx-auto my-8 center w-2/3 rounded-lg max-w-4xl" /></p>
 <div class="italic text-center font-xs">Image 2: Means of the states of the Particle Filter vs. Ground truth. N is 100, 200, 400, 1000 (left to right).</div>
 <p><br />
 <br />
 Tests were performed for multiple values of N (100, 200, 400, 1000) and the plots for the filter’s output means and the ground truth are shown in Image 2. The heading of the robot is not plotted here for ease of understanding. The filter was seeded with the initial location of the robot.
-<img src="../public/images/projects/particle-filter/results-table.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
+<img src="/public/images/projects/particle-filter/results-table.png" class="mx-auto my-8 center w-1/3 rounded-lg max-w-4xl" /></p>
 <div class="italic text-center font-xs">Table 1: Mean error for different number of particles.</div>
 <p><br />
 <br />
@@ -161,8 +167,93 @@ gets closer to the ground truth each timestep, until the state reaches the same 
 
   
 <footer class="mt-10 mb-10 py-8 text-center text-sm text-gray-500">
-  <span>2026 - Maximiliano Palay</span>
+  <div class="flex items-center justify-center gap-3">
+    <span>2026 - Maximiliano Palay</span>
+    <span aria-hidden="true" class="text-black/20">|</span>
+    <button
+      type="button"
+      class="text-gray-500 underline underline-offset-4 decoration-black/20 hover:text-stoneink transition"
+      data-privacy-open>
+      Privacy
+    </button>
+  </div>
 </footer>
+
+<div
+  class="hidden fixed inset-0 z-[70] overflow-y-auto px-5 py-8"
+  aria-hidden="true"
+  data-privacy-modal>
+  <div class="absolute inset-0 bg-stoneink/45 backdrop-blur-sm" data-privacy-close></div>
+  <div class="relative mx-auto flex h-full w-11/12 max-w-screen-xl items-center justify-center lg:w-9/12 xl:w-8/12" style="max-width: 76rem;">
+    <div
+      class="mx-auto w-full max-w-3xl rounded-[1.5rem] border border-black/10 bg-white px-6 py-6 shadow-[0_24px_80px_rgba(0,0,0,0.18)] sm:px-8"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="privacy-modal-title">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-[0.68rem] uppercase tracking-[0.28em] text-black/45">Privacy</p>
+          <h2 id="privacy-modal-title" class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-stoneink">
+            Analytics
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-stoneink hover:bg-black/[0.04] transition"
+          aria-label="Close privacy dialog"
+          data-privacy-close>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="mt-5 text-base leading-8 text-graphite">
+        This website uses Plausible Analytics to help me understand the impact of my work. This is a no-cookie
+        privacy friendly service which is GDPR, CCPA, and PECR compliant and collects no personal information, it
+        only aggregates anonymous data. Check out the Plausible Analytics privacy policy
+        <a
+          href="https://plausible.io/data-policy"
+          target="_blank"
+          rel="noreferrer"
+          class="font-medium text-stoneink underline underline-offset-4">
+          here
+        </a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const modal = document.querySelector('[data-privacy-modal]');
+    const openButton = document.querySelector('[data-privacy-open]');
+    const closeButtons = Array.from(document.querySelectorAll('[data-privacy-close]'));
+
+    if (!modal || !openButton) return;
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+    };
+
+    const openModal = () => {
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('overflow-hidden');
+    };
+
+    openButton.addEventListener('click', openModal);
+    closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  })();
+</script>
 
 
   <script>
