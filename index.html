@@ -88,7 +88,7 @@
         <div class="reveal show">
           <p class="text-5xl lg:text-6xl xl:text-7xl leading-[0.95] font-semibold tracking-tight max-w-4xl text-stoneink m-0">
             Building <span class="italic font-light text-graphite">robots</span>,
-            machines, and
+            systems, and
             <span class="italic font-light text-graphite">software</span>
             that interact with
             the real world.
@@ -107,13 +107,13 @@
 
         <div class="reveal flex flex-col gap-2 md:gap-3">
           
-          <a href="/projects/cable-driven-robot/" aria-label="View Cable driven parallel robot" class="block scroll-parallax-wrap hero-project-hover rounded-[2rem]" data-parallax-single data-speed="10">
+          <a href="/projects/visual-inertial-localization-and-mapping/" aria-label="View Visual Inertial Localization and Mapping" class="block scroll-parallax-wrap hero-project-hover rounded-[2rem]" data-parallax-single data-speed="10">
           
             <div class="relative glass-border rounded-[2rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-panel overflow-hidden aspect-w-16 aspect-h-10">
               <div class="parallax-single overflow-hidden">
                 
                 
-                <img src="/public/gifs/cdpr.gif" alt="Cable driven parallel robot" class="mix-blend-normal opacity-[0.96] scale-[1.04]" />
+                <img src="/public/gifs/localization-and-mapping.gif" alt="Visual Inertial Localization and Mapping" class="mix-blend-normal opacity-[0.96] scale-[1.04]" />
                 
                 
                 <div class="absolute inset-0 bg-gradient-to-tr from-black/[0.06] via-transparent to-white/[0.12]"></div>
@@ -145,9 +145,9 @@
 
           
           <div class="rounded-[1.6rem] border border-black/[0.08] bg-white/70 backdrop-blur-xl shadow-soft px-6 md:px-8 py-6 w-full">
-            <p class="text-[11px] uppercase tracking-[0.22em] text-graphite">Featured project · Cable driven parallel robot</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-graphite">Featured project · Visual Inertial Localization and Mapping</p>
             <p class="mt-3 text-base md:text-lg text-stoneink leading-relaxed">
-              Design, build and control of a cable driven robot.
+              Pose estimation and mapping through fused visual and inertial sensing.
             </p>
           </div>
           
@@ -184,43 +184,77 @@
           <p class="text-3xl md:text-5xl font-semibold tracking-tight text-stoneink m-0">Featured projects</p>
         </div>
         <p class="max-w-2xl text-lg md:text-xl text-graphite leading-relaxed">
-          A few projects that best represent the way I like to work: multidisciplinary, technically demanding, and built to function in the real world.
+          A few projects that best represent the way I like to work: multidisciplinary and built to function in the real world.
         </p>
       </div>
 
       <div class="grid xl:grid-cols-12 gap-6 md:gap-7">
         
         <article class="project-card reveal relative glass-border overflow-hidden rounded-[1.75rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft xl:col-span-7">
-          <a href="/projects/mecanum-wheel-base/" class="block h-full">
+          <a href="/projects/cable-driven-robot/" class="block h-full">
             <div class="grid lg:grid-cols-[1.08fr_0.92fr] h-full">
               <div class="project-media relative min-h-[320px] overflow-hidden bg-[#ece7df] border-b lg:border-b-0 lg:border-r border-black/[0.06]" style="isolation: isolate;">
                 
-                <img src="/public/gifs/mecanum-base.gif" alt="Omnidirectional robot from scratch" class="w-full h-full object-cover" />
+                <img src="/public/gifs/cdpr.gif" alt="Cable driven parallel robot" class="w-full h-full object-cover" />
                 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/[0.22] via-transparent to-transparent"></div>
-                <div class="absolute left-[1.1rem] top-[1.1rem] z-[2] inline-block max-w-[calc(100%-2.2rem)] whitespace-nowrap rounded-full bg-white/[0.78] px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stoneink backdrop-blur-sm shadow-soft">Minimec</div>
+                <div class="absolute left-[1.1rem] top-[1.1rem] z-[2] inline-block max-w-[calc(100%-2.2rem)] whitespace-nowrap rounded-full bg-white/[0.78] px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stoneink backdrop-blur-sm shadow-soft">Cable robot</div>
               </div>
               <div class="p-6 md:p-8 flex flex-col justify-between">
                 <div>
                   <div class="flex items-start justify-between gap-4">
-                    <p class="text-2xl md:text-3xl font-semibold tracking-tight text-stoneink m-0">Holonomic mobile base designed and built end-to-end.</p>
+                    <p class="text-2xl md:text-3xl font-semibold tracking-tight text-stoneink m-0">Cable driven parallel robot.</p>
                     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-1 h-[0.8rem] w-[0.8rem] flex-none text-stoneink opacity-40">
                       <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </div>
-                  <p class="mt-4 text-graphite leading-relaxed">A ROS2 mecanum platform developed from chassis and electronics through controls, path generation, and physical fabrication.</p>
+                  <p class="mt-4 text-graphite leading-relaxed">A custom cable-driven robot integrating mechanical design, electronics, kinematics, and ROS2-based motion control into a working experimental system.</p>
                 </div>
                 <div class="mt-6 flex flex-wrap gap-2 text-xs text-graphite">
                   
                   <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
                   
-                  <span class="rounded-full bg-cream px-3 py-1.5">c++</span>
+                  <span class="rounded-full bg-cream px-3 py-1.5">python</span>
+                  
+                  <span class="rounded-full bg-cream px-3 py-1.5">kinematics</span>
                   
                   <span class="rounded-full bg-cream px-3 py-1.5">control</span>
                   
-                  <span class="rounded-full bg-cream px-3 py-1.5">PID</span>
-                  
                 </div>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+
+        
+        <article class="project-card reveal relative glass-border overflow-hidden rounded-[1.75rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft xl:col-span-5">
+          <a href="/projects/mecanum-wheel-base/" class="block h-full">
+            <div class="project-media relative overflow-hidden bg-[#ece7df]" style="aspect-ratio: 4 / 3; isolation: isolate;">
+              
+              <img src="/public/gifs/mecanum-base.gif" alt="Omnidirectional robot from scratch" class="w-full h-full object-cover" />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-black/[0.22] via-transparent to-transparent"></div>
+              <div class="absolute left-[1.1rem] top-[1.1rem] z-[2] inline-block max-w-[calc(100%-2.2rem)] whitespace-nowrap rounded-full bg-white/[0.78] px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stoneink backdrop-blur-sm shadow-soft">Minimec</div>
+            </div>
+              <div class="p-6 md:p-7">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                  <p class="text-2xl font-semibold tracking-tight text-stoneink m-0">Holonomic mobile base designed and built end to end.</p>
+                  </div>
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-1 h-[0.8rem] w-[0.8rem] flex-none text-stoneink opacity-40">
+                    <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              <p class="mt-4 text-graphite leading-relaxed">A ROS2 mecanum platform developed from chassis and electronics through controls, path generation, and physical fabrication.</p>
+              <div class="mt-6 flex flex-wrap gap-2 text-xs text-graphite">
+                
+                <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
+                
+                <span class="rounded-full bg-cream px-3 py-1.5">c++</span>
+                
+                <span class="rounded-full bg-cream px-3 py-1.5">control</span>
+                
               </div>
             </div>
           </a>
@@ -254,40 +288,6 @@
                 <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
                 
                 <span class="rounded-full bg-cream px-3 py-1.5">c++</span>
-                
-              </div>
-            </div>
-          </a>
-        </article>
-        
-
-        
-        <article class="project-card reveal relative glass-border overflow-hidden rounded-[1.75rem] bg-white/70 backdrop-blur-xl border border-black/[0.08] shadow-soft xl:col-span-5">
-          <a href="/projects/nerfbot/" class="block h-full">
-            <div class="project-media relative overflow-hidden bg-[#ece7df]" style="aspect-ratio: 4 / 3; isolation: isolate;">
-              
-              <img src="/public/gifs/nerf.gif" alt="Nerfbot" class="w-full h-full object-cover" />
-              
-              <div class="absolute inset-0 bg-gradient-to-t from-black/[0.22] via-transparent to-transparent"></div>
-              <div class="absolute left-[1.1rem] top-[1.1rem] z-[2] inline-block max-w-[calc(100%-2.2rem)] whitespace-nowrap rounded-full bg-white/[0.78] px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stoneink backdrop-blur-sm shadow-soft">Nerfbot</div>
-            </div>
-              <div class="p-6 md:p-7">
-                <div class="flex items-start justify-between gap-4">
-                  <div>
-                  <p class="text-2xl font-semibold tracking-tight text-stoneink m-0">Perception-and-manipulation system for autonomous target engagement.</p>
-                  </div>
-                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="project-arrow mt-1 h-[0.8rem] w-[0.8rem] flex-none text-stoneink opacity-40">
-                    <path d="M4 12L12 4M6 4H12V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </div>
-              <p class="mt-4 text-graphite leading-relaxed">A multi-subsystem robot combining vision, arm motion, voice input, and hardware interfacing to detect and shoot physical targets.</p>
-              <div class="mt-6 flex flex-wrap gap-2 text-xs text-graphite">
-                
-                <span class="rounded-full bg-cream px-3 py-1.5">ros2</span>
-                
-                <span class="rounded-full bg-cream px-3 py-1.5">python</span>
-                
-                <span class="rounded-full bg-cream px-3 py-1.5">arduino</span>
                 
               </div>
             </div>
@@ -358,10 +358,10 @@
         <div class="reveal">
           <div class="rounded-[2rem] border border-black/[0.08] bg-white/65 shadow-soft p-7 md:p-9 leading-relaxed text-[17px] text-graphite space-y-5">
             <p>
-              My interests sit at the intersection of robotics, controls, embedded systems, software, and physical prototyping. I like projects that require both careful reasoning and hands-on execution.
+              My interests span all areas of robotics, the intersection of embedded systems, software, and hardware. I like projects that require both careful reasoning and hands-on execution.
             </p>
             <p>
-              Whether that means designing a mechanism, building out electronics, developing control software, or debugging the entire stack until it behaves, I enjoy turning difficult ideas into working systems.
+              Whether that means designing a mechanism, building out electronics, developing control software, or architecting the entire stack, I enjoy turning difficult ideas into working systems.
             </p>
             <p>
               This portfolio is a selection of projects that reflect that approach.
@@ -381,7 +381,7 @@
             <p class="text-xs uppercase tracking-[0.24em] text-white/[0.65]">Contact</p>
             <p class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-white m-0">Let’s connect.</p>
             <p class="mt-4 text-white/75 leading-relaxed">
-              For collaborations, interesting projects, or technical conversations.
+              For collaborations, interesting projects, or just a chat about all the things robotics.
             </p>
           </div>
 
