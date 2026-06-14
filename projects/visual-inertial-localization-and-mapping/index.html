@@ -3,13 +3,42 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 	<script type="text/javascript"
 			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 	</script>
 
 	<title>Max's Portfolio</title>
+	<link rel="canonical" href="https://maxpalay.com/projects/visual-inertial-localization-and-mapping/">
 	<link rel="icon" type="image/png" href="/public/images/logo_icon_black_small.png">
+
+	<meta name="description" content="Portfolio for Max Palay's work in robotics, controls, embedded systems, software, and physical prototyping.">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Max's Portfolio">
+	<meta property="og:title" content="Max's Portfolio">
+	<meta property="og:description" content="Portfolio for Max Palay's work in robotics, controls, embedded systems, software, and physical prototyping.">
+	<meta property="og:url" content="https://maxpalay.com/projects/visual-inertial-localization-and-mapping/">
+	<meta property="og:image" content="https://maxpalay.com/public/gifs/localization-and-mapping.gif">
+	<meta property="og:image:width" content="1818">
+	<meta property="og:image:height" content="964">
+	<meta property="og:image:alt" content="Max Palay portfolio social preview featuring robotics, systems, and software projects.">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Max's Portfolio">
+	<meta name="twitter:description" content="Portfolio for Max Palay's work in robotics, controls, embedded systems, software, and physical prototyping.">
+	<meta name="twitter:image" content="https://maxpalay.com/public/gifs/localization-and-mapping.gif">
+	<meta name="twitter:image:alt" content="Max Palay portfolio social preview featuring robotics, systems, and software projects.">
 
 	<link rel="stylesheet" href="/public/stylesheets/style.css">
 
@@ -97,7 +126,8 @@
         </section>
 
         <article class="project-page__content reveal">
-          <p><br /></p>
+          <iframe src="https://www.youtube.com/embed/JJWNt1nFDpM?si=bFvhuu1nX2-X8Jxm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+<p><br /></p>
 <div class="text-center font-medium">This project's source code and documentation is available on <a href="https://github.com/maxipalay/localization_and_mapping" target="_blank"> <img class="h-8 inline-block relative top-[-2px]" src="/public/logos/github-long-black.png" /></a></div>
 
 <h2 id="overview">Overview</h2>
@@ -108,13 +138,135 @@
 
 <p>I’d recommend to check the linked Github repo to dive deeper. It contains multiple readmes that explain the most important parts of the system. I’ll try to keep this portfolio post somewhat technical, but talk also about the story, results and learnings.</p>
 
-<p><img src="/public/gifs/localization-and-mapping.gif" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" /></p>
+<h2 id="the-workflow">The workflow</h2>
 
-<div class="mx-auto my-8 w-full max-w-3xl rounded-[1.25rem] border border-black/10 bg-cream px-6 py-5 text-center text-2xl md:text-3xl font-semibold tracking-[0.16em] text-stoneink shadow-soft">
-  [WORK IN PROGRESS]
+<p>The system is intended to be used to capture a map first, then localize in it. The two main workflows (and operation modes) of this system are <code class="language-plaintext highlighter-rouge">mapping</code> and <code class="language-plaintext highlighter-rouge">localization</code> modes.</p>
+
+<p><img src="/public/images/projects/localization-and-mapping/workflow_summary.png" class="plain-figure mx-auto my-8 center w-full rounded-lg max-w-5xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 1: High-level workflow of the system, from mapping and logging to offline optimization, dense fusion, and later localization. Live/real time processes are shown in green, artifacts shown in blue, offline processes shown in red.</div>
+
+<p>There are 3 main steps to using the system:</p>
+<ol>
+  <li>Run in <code class="language-plaintext highlighter-rouge">mapping</code> mode and record a session.</li>
+  <li>Clean up the session offline and build map files from it.</li>
+  <li>Run in <code class="language-plaintext highlighter-rouge">localization</code> mode using the optimized tag map.</li>
+</ol>
+
+<h3 id="1-online-mapping-mode">1. Online mapping mode</h3>
+
+<p><code class="language-plaintext highlighter-rouge">mapping</code> mode is the first half of the system. The camera moves through an unmapped space, the online estimator tracks motion in real time, and a logger saves a session to disk.</p>
+
+<iframe src="https://www.youtube.com/embed/m-FqUBgdCHE?si=1bNIhYH_73c2SXBX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Video 1: Mapping run. The estimator is running online while the session logger records data for later offline processing. The viz shows the estimated camera position relative to the start/boot, the estimated path, and the active points in the live optimization window.</div>
+<p><br /></p>
+
+<p>In this mode, the system is performing:</p>
+
+<ul>
+  <li>stereo tracking (temporal tracking + L/R gating)</li>
+  <li>IMU preintegration</li>
+  <li>local window optimization</li>
+  <li>keyframe logging</li>
+  <li>optional AprilTag detections for later loop closure</li>
+</ul>
+
+<p>The estimate is locally good, but it still drifts. The objective of this mode is to get through the space, keep a usable estimate online, and save enough information to clean the run up later.
+<br />
+<br /></p>
+
+<h3 id="2-cleaning-the-run-up-offline">2. Cleaning the run up offline</h3>
+
+<div class="mx-auto my-8 center w-full max-w-4xl flex flex-col md:flex-row gap-4">
+    <img src="/public/images/projects/localization-and-mapping/unoptimized_poses_mesh.png" alt="" class="plain-figure w-full md:w-1/2 rounded-lg" />
+    <img src="/public/images/projects/localization-and-mapping/optimized_poses_mesh.png" alt="" class="plain-figure w-full md:w-1/2 rounded-lg" />
 </div>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 2: Mesh generated before and after offline pose-graph optimization.</div>
 
-<p class="text-center">I'm currently writing this post, It'll be ready mid June. In the meantime, feel free to check the Github repo.</p>
+<p>Once the run is done, it’s time to clean up. The online estimate is a good starting point, but depending on the environment and capturing conditions, it might be way off. This means not only the estimates have to be logged, but also the raw data to improve them with “unlimited” compute and time.</p>
+
+<p>The first step is offline global optimization. This step rebuilds the run as a pose graph using the logged keyframes and tag observations. Right now, tags are doing most of the loop closure work here. The result is a cleaner set of poses and a cleaner tag map. Frontend health metrics are used as a covariance metric for edges between keyframes and that’s how the optimizer “knows” what nodes it can pull more to make corrections.</p>
+
+<p>In <em>Image 2</em> you can observe two meshes. One was generated from the raw logged poses and the other one was generated after optimization. For this run, the camera started and ended in the same place (I used a jig that stayed stationary while I walked around with the camera). Looking at the logged online data, the error between the first and last keyframe was <code class="language-plaintext highlighter-rouge">0.66 meters</code>. After optimization, the error was brought down to <code class="language-plaintext highlighter-rouge">0.01 meters</code>. This shows how important this extra step is. The massive help here is provided by using the tag detections to close the loop + the frontend tracking metrics used in the optimization.</p>
+
+<p>Then those optimized poses get used for dense fusion. That is what turns the run into the denser map files: mesh, ESDF slices, and the rest of the exported artifacts.
+<br />
+<img src="/public/images/projects/localization-and-mapping/optimized_session_poses_tsdf_esdf.png" class="plain-figure mx-auto my-8 center w-full rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 3: Files produced from an optimized session, including the cleaned trajectory and dense mapping results.</div>
+
+<h3 id="3-localization-mode">3. Localization mode</h3>
+
+<p>After I have an optimized tag map, the system can switch to <code class="language-plaintext highlighter-rouge">localization</code> mode. In localization mode, the goal is no longer just to estimate motion relative to where the robot started. The goal is to stay consistent with a previously built map.</p>
+
+<p>This mode runs the same odometry backbone, but now there is a localization node on top of it. That node loads the optimized tag poses and uses live detections to pull the estimate back toward the map frame.</p>
+
+<iframe src="https://www.youtube.com/embed/d6RsUbeEhz0?si=IthOx-B6hGWuXead" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" class="mx-auto my-8 center w-full rounded-lg max-w-4xl" style="aspect-ratio: 16 / 9;"></iframe>
+
+<p>The <code class="language-plaintext highlighter-rouge">map</code> in this system is really a set of optimized tag poses. That is an important limitation. I am not doing feature-map localization here. If the system goes too long without seeing a tag, it can still drift badly.</p>
+
+<h2 id="under-the-hood">Under the hood</h2>
+
+<p>If you want to dive deeper, the linked repo has readmes for the main parts of the system. I’ll keep it lighter here and just go over the main pieces in the online stack.</p>
+
+<h3 id="frontend-and-keyframes">Frontend and keyframes</h3>
+
+<p>The frontend is the boundary where raw sensor data enters the system. The stereo images and IMU are processed and compressed into keyframes. Basically, when stereo pairs are ingested, features are tracked temporally (<code class="language-plaintext highlighter-rouge">t-1/t</code>) and spatially (<code class="language-plaintext highlighter-rouge">left/right</code>) and gated with backward passes. Processing the detections enables the system to quickly drop “bad” data. PnP is used to estimate relative motion in between frames. The frontend also tracks motion since the last emitted keyframe. If that motion raises above a threshold, or there is a timeout, or tracking quality drops, a new keyframe is triggered. At this point, the IMU samples that arrived within the keyframe timeframe are preintegrated and added to the keyframe metadata.</p>
+
+<p><img src="/public/images/projects/localization-and-mapping/frontend_summary.png" class="plain-figure mx-auto my-8 center w-full rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 4: Frontend flow. Stereo tracking runs at frame rate, IMU samples build up in parallel, and keyframes come out once the interval is ready.</div>
+<p><br /></p>
+
+<p>This is more clearly explained by <em>Image 4</em>. The frontend can be thought as 3 threads running in paralled. The IMU thread just adds stamped samples to a queue. The frames handling thread is where most of the work is done, tracking, PnP, and keyframe triggering. The keyframes handling thread should be basically run by the user of the library. This is necessary because we assume the data is not perfectly synced. If the frames thread says a keyframe should be triggered, not all the IMU samples might have been received within the interval. That keyframe is then inserted into a pending queue. The user of the module has to ask at will if a keyframe has been completed. This checks the IMU queue and if there’s IMU samples whose stamps exceed the pending keyframe interval, the IMU is preintegrated and the keyframe is then completed.</p>
+
+<h3 id="fixed-lag-backend">Fixed-lag backend</h3>
+
+<p>Running optimization from the data generated by every frame/sample would be intractable (for now). This is where keyframes come in handy. A keyframe is basically a compressed summary of what happened in a given time interval. The main input for the backend is a continuous stream of keyframes. This is the part that optimizes pose, velocity and IMU bias over a recent window.</p>
+
+<p><img src="/public/images/projects/localization-and-mapping/optimization_summary.png" class="plain-figure mx-auto my-8 center w-full rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 5: Optimization module inputs/outputs.</div>
+
+<p>I went with a fixed-lag setup because I wanted something that stays bounded online. It is not trying to solve the whole history at once. It only keeps a recent chunk of the trajectory and keeps re-solving that.</p>
+
+<p>That is what gives the online estimate its local smoothness. But it is also why the estimate can still drift over a long run. The backend is only trying to stay locally consistent. The offline stage is what cleans up the bigger errors later.</p>
+
+<p>A lot of the debugging work in this project lives between the frontend and the backend. When the estimate looks wrong, the possible causes are many: bad tracks, weak geometry, timing issues, calibration issues, or just poor visual conditions.</p>
+
+<h3 id="tag-based-localization">Tag based localization</h3>
+
+<p>The last piece in the online stack is localization. This part takes tag detections, filters them, and turns them into correction estimates.
+<br />
+<br />
+<img src="/public/images/projects/localization-and-mapping/localization_summary.png" class="plain-figure mx-auto my-8 center w-full rounded-lg max-w-4xl" /></p>
+<div class="italic text-center font-xs w-5/6 mx-auto center">Image 6: Localization path. Tag detections are filtered, turned into correction estimates, and then used to bootstrap, track, or relocalize.</div>
+<p><br />
+<br /></p>
+
+<p>Based on those correction estimates, the controller decides if the system should:</p>
+
+<ul>
+  <li>stay in odometry-only mode</li>
+  <li>bootstrap into localized mode</li>
+  <li>apply tracking priors</li>
+  <li>relocalize</li>
+</ul>
+
+<p>This is not generic feature-map localization. It is tag based, and that is a conscious simplification. It makes the behavior easier to reason about, but it also means the system depends on seeing tags often enough. If it goes too long without seeing one, the estimate can still drift badly.</p>
+
+<p>This part works, but it is still rough. Especially the transitions between plain odometry, bootstrap, and relocalization.</p>
+
+<h2 id="last-thoughts">Last thoughts</h2>
+
+<p>Even with many quirks, this project already does the main thing I wanted it to do: build a map with stereo + IMU and localize in it. It also taught me that systems like this are not only about the estimator. A lot of the work is in logging, replay, visualization, debugging and all the small tools needed to understand what is going on.</p>
+
+<p>Check out the improvements section in the repo for a bunch of improvements that I already identified.</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<ul>
+  <li><a href="https://github.com/ros2">ROS2</a> - Probably not in enough acknowledgements. The core middleware that makes this integration easy.</li>
+  <li><a href="https://github.com/borglab/gtsam">GTSAM</a> - The core optimization package. So powerful, I’m probably under utilizing it.</li>
+  <li><a href="https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox">Isaac ROS Nvblox</a> - Great open source library for mesh generation on CUDA capable hardware.</li>
+  <li><a href="https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_visual_slam">Isaac ROS Visual SLAM / cuVSLAM</a> - The package from which I took inspiration for some architecture and functionality.</li>
+</ul>
 
         </article>
       </div>
